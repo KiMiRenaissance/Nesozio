@@ -35,7 +35,7 @@ function renderProducts() {
                         <h5 class="card-title flex-grow-1">
                             ${product.name.length > 40 ? product.name.slice(0, 40) + '...' : product.name}
                         </h5>
-                        <p class="card-text text-primary fw-bold">${product.price}</p>
+                        <p class="card-text text-primary fw-bold">~Rp ${product.price}</p>
                         <button class="btn btn-outline-primary mt-2 w-100" onclick="window.location.href='./product/product-detail/product.html?id=${product.id}'">Beli</button>
                     </div>
                 </div>

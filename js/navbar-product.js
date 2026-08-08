@@ -1,5 +1,5 @@
 /* ==========================================================================
-   AURA LUXE - NAVBAR INTERACTION & AUTO-COMPLETE SEARCH
+   NesoZio - NAVBAR INTERACTION & AUTO-COMPLETE SEARCH
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -71,7 +71,7 @@ const Navbar = {
         dropdown.innerHTML = `<div style="padding: 1rem; text-align: center; color: var(--text-muted);">No products found for "${query}"</div>`;
       } else {
         dropdown.innerHTML = matches.map(p => `
-          <div class="search-item d-flex mt-3" onclick="window.location.href='./product/product-detail/product.html?id=${p.id}'">
+          <div class="search-item d-flex mt-3" onclick="window.location.href='./product.html?id=${p.id}'">
             <img src="${p.images[0]}" alt="${p.name}" class="col-2 m-1">
             <div>
               <h6>${p.name}</h6>
