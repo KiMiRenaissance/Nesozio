@@ -1,7 +1,3 @@
-/* ==========================================================================
-   NesoZio - NAVBAR INTERACTION & AUTO-COMPLETE SEARCH
-   ========================================================================== */
-
 document.addEventListener('DOMContentLoaded', () => {
   Navbar.init();
 });

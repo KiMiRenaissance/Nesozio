@@ -37,5 +37,4 @@ function renderProducts() {
     container.innerHTML = html;
 }
 
-// Panggil fungsi saat halaman selesai dimuat
 document.addEventListener('DOMContentLoaded', renderProducts);
