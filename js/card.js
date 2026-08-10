@@ -1,6 +1,3 @@
-/**
- * Fungsi pengacakan Fisher-Yates (shuffle array)
- */
 function shuffleArray(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -9,15 +6,9 @@ function shuffleArray(arr) {
     return arr;
 }
 
-/**
- * Render produk ke dalam container
- */
 function renderProducts() {
     const container = document.getElementById('product-container');
-    // Salin array agar aslinya tidak berubah, lalu acak
     const shuffled = shuffleArray([...PRODUCTS]);
-
-    // Buat HTML untuk setiap produk
     let html = '';
     shuffled.forEach(product => {
         html += `
@@ -35,8 +26,8 @@ function renderProducts() {
                         <h5 class="card-title flex-grow-1">
                             ${product.name.length > 40 ? product.name.slice(0, 40) + '...' : product.name}
                         </h5>
-                        <p class="card-text text-primary fw-bold">~Rp ${product.price}</p>
-                        <button class="btn btn-outline-primary mt-2 w-100" onclick="window.location.href='./product/product-detail/product.html?id=${product.id}'">Beli</button>
+                        <p class="card-text text-primary fw-bold">~Rp ${product.price.toLocaleString('id-ID')}</p>
+                        <button class="btn btn-outline-primary mt-2 w-100" onclick="window.location.href='./product/product.html?id=${product.id}'">Beli</button>
                     </div>
                 </div>
             </div>

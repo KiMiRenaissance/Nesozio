@@ -75,7 +75,7 @@ const Navbar = {
             <img src="${p.images[0]}" alt="${p.name}" class="col-2 m-1">
             <div>
               <h6>${p.name}</h6>
-              <span style="font-size: 75%">~Rp ${p.price}</span>
+              <span style="font-size: 75%">~Rp ${p.price.toLocaleString('id-ID')}</span>
             </div>
           </div>
         `).join('');

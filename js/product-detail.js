@@ -13,7 +13,7 @@ const ProductDetail = {
     this.currentProduct = await DBBridge.getProductById(productId);
 
     if (!this.currentProduct) {
-      window.location.href = '404.html';
+      window.location.href = '../404/index.html';
       return;
     }
 
@@ -31,7 +31,6 @@ const ProductDetail = {
 
     mainContainer.innerHTML = `
       <div class="row">
-        <!-- Kolom gambar -->
         <div class="col-md-6">
           <img id="productMainImage" src="${p.images[0]}" class="img-fluid mb-3" alt="${p.name}">
           <div class="d-flex gap-2 flex-wrap" id="productThumbnails">
@@ -45,7 +44,6 @@ const ProductDetail = {
           </div>
         </div>
 
-        <!-- Kolom info produk -->
         <div class="col-md-6">
           <h3 id="pdTitle">${p.name}</h3>
           <p id="pdCategory" class="text-muted">${p.category} • ${p.brand}</p>
@@ -66,7 +64,6 @@ const ProductDetail = {
         </div>
       </div>
 
-      <!-- Spesifikasi (opsional) -->
       ${p.specifications ? `
       <div class="row mt-5">
         <div class="col-12">
@@ -83,7 +80,6 @@ const ProductDetail = {
       </div>
       ` : ''}
 
-      <!-- Produk Terkait -->
       <div class="row mt-5">
         <div class="col-12">
           <h4>Produk Terkait</h4>
@@ -131,7 +127,7 @@ const ProductDetail = {
           <img src="${p.images[0]}" class="card-img-top" alt="${p.name}" style="height: 200px; object-fit: cover;">
           <div class="card-body d-flex flex-column">
             <h6 class="card-title">${p.name}</h6>
-            <p class="card-text text-muted">Rp ${p.price.toLocaleString('id-ID')}</p>
+            <p class="card-text text-muted">~Rp ${p.price.toLocaleString('id-ID')}</p>
             <a href="product.html?id=${p.id}" class="btn btn-sm btn-outline-primary mt-auto">Lihat Detail</a>
           </div>
         </div>
