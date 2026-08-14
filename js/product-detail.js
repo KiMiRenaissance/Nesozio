@@ -1,11 +1,8 @@
-/* ==========================================================================
-   NesoZio - PRODUCT DETAIL PAGE CONTROLLER (Dynamic Render)
-   ========================================================================== */
-
 const ProductDetail = {
   currentProduct: null,
   selectedColor: null,
   selectedSize: null,
+  quantity: 1,
 
   async init() {
     const params = new URLSearchParams(window.location.search);
@@ -17,8 +14,15 @@ const ProductDetail = {
       return;
     }
 
-    this.trackRecentlyViewed(productId);
-    document.title = `${this.currentProduct.name} - Neso Zio`;
+    if (this.currentProduct.sizes && this.currentProduct.sizes.length > 0) {
+      this.selectedSize = this.currentProduct.sizes[0];
+    }
+    if (this.currentProduct.colors && this.currentProduct.colors.length > 0) {
+      this.selectedColor = this.currentProduct.colors[0];
+    }
+    this.quantity = 1;
+
+    document.title = `${this.currentProduct.name} - NesoZio`;
     this.render();
   },
 
@@ -27,64 +31,148 @@ const ProductDetail = {
     if (!p) return;
 
     const mainContainer = document.getElementById('detailProduct');
-    mainContainer.className = 'container py-5';
+    mainContainer.className = 'container detail-page px-lg-4';
+
+    const images = Array.isArray(p.images) ? p.images : [p.images];
+    const isWishlisted = Wishlist.contains(p.id);
 
     mainContainer.innerHTML = `
-      <div class="row">
-        <div class="col-md-6">
-          <img id="productMainImage" src="${p.images[0]}" class="img-fluid mb-3" alt="${p.name}">
-          <div class="d-flex gap-2 flex-wrap" id="productThumbnails">
-            ${p.images.map((img, idx) => `
-              <div class="thumb-item ${idx === 0 ? 'active' : ''}" 
-                   onclick="ProductDetail.switchImage('${img}', this)" 
-                   style="width: 70px; height: 70px; border-radius: 8px; overflow: hidden; border: 2px solid ${idx === 0 ? 'var(--primary-color, #0d6efd)' : 'transparent'}; cursor: pointer;">
-                <img src="${img}" alt="Thumbnail" style="width:100%; height:100%; object-fit: cover;">
-              </div>
-            `).join('')}
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="../index.html">Beranda</a></li>
+          <li class="breadcrumb-item"><a href="../search/index.html?q=${encodeURIComponent(p.category)}">${p.category}</a></li>
+          <li class="breadcrumb-item active" aria-current="page">${p.name.length > 35 ? p.name.slice(0, 35) + '...' : p.name}</li>
+        </ol>
+      </nav>
+
+      <div class="row animate-fade-in-up">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <div class="product-detail-images">
+            <div class="main-image-container">
+              <img id="productMainImage" src="${images[0]}" alt="${p.name}" onerror="this.src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop&q=80'">
+            </div>
+            ${images.length > 1 ? `
+            <div class="thumbnails" id="productThumbnails">
+              ${images.map((img, idx) => `
+                <div class="thumb-item ${idx === 0 ? 'active' : ''}" onclick="ProductDetail.switchImage('${img}', this)">
+                  <img src="${img}" alt="Thumbnail ${idx + 1}" onerror="this.src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=200'">
+                </div>
+              `).join('')}
+            </div>
+            ` : ''}
           </div>
         </div>
 
-        <div class="col-md-6">
-          <h3 id="pdTitle">${p.name}</h3>
-          <p id="pdCategory" class="text-muted">${p.category} • ${p.brand}</p>
-          <p id="pdDescription">${p.description}</p>
+        <div class="col-lg-6">
+          <div class="product-detail-info">
+            <span class="detail-category">${p.category}</span>
+            <h1 class="detail-title">${p.name}</h1>
+            <p class="detail-brand">Brand: <strong>${p.brand}</strong></p>
+            <div class="detail-price">Rp ${p.price.toLocaleString('id-ID')}</div>
+            <p class="detail-description">${p.description}</p>
 
-          <div id="pdSizes" class="mb-3">
-            ${p.sizes ? p.sizes.map((s, i) => `
-              <button class="btn btn-outline btn-sm size-option-btn ${i === 0 ? 'btn-primary' : ''}" 
-                      onclick="ProductDetail.selectSize('${s}', this)">${s}</button>
-            `).join('') : ''}
-          </div>
+            ${p.colors && p.colors.length > 0 ? `
+            <div class="option-group">
+              <label class="option-label">Pilih Warna:</label>
+              <div class="color-options" id="colorOptions">
+                ${p.colors.map((color, idx) => `
+                  <button class="color-btn ${this.selectedColor === color ? 'active' : ''}" 
+                          style="background:${color};" 
+                          onclick="ProductDetail.selectColor('${color}', this)"
+                          title="Warna ${idx + 1}"></button>
+                `).join('')}
+              </div>
+            </div>
+            ` : ''}
 
-          <h4 class="text-primary">~Rp ${p.price.toLocaleString('id-ID')}</h4>
+            ${p.sizes && p.sizes.length > 0 ? `
+            <div class="option-group">
+              <label class="option-label">Pilih Ukuran:</label>
+              <div class="size-options" id="sizeOptions">
+                ${p.sizes.map(size => `
+                  <button class="size-btn ${this.selectedSize === size ? 'active' : ''}" 
+                          onclick="ProductDetail.selectSize('${size}', this)">${size}</button>
+                `).join('')}
+              </div>
+            </div>
+            ` : ''}
 
-          <div class="d-flex gap-2 mt-3">
-            <a href="${p.link}" target="_blank" class="btn btn-success">Beli di Tokopedia</a>
+            <div class="option-group">
+              <label class="option-label">Jumlah:</label>
+              <div class="quantity-wrapper">
+                <div class="quantity-control">
+                  <button class="quantity-btn" onclick="ProductDetail.changeQuantity(-1)">−</button>
+                  <input type="number" class="quantity-input" id="quantityInput" value="1" min="1" onchange="ProductDetail.setQuantity(this.value)">
+                  <button class="quantity-btn" onclick="ProductDetail.changeQuantity(1)">+</button>
+                </div>
+                <div style="color:var(--text-muted);font-size:0.85rem;">
+                  Stok: <strong style="color:var(--accent);">Tersedia ✓</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="action-buttons">
+              <button class="btn-wishlist-large ${isWishlisted ? 'active' : ''}" onclick="ProductDetail.toggleWishlist(this)" title="Wishlist">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="${isWishlisted ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+              </button>
+              <button class="btn-primary-large" onclick="ProductDetail.addToCart()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                Tambah Keranjang
+              </button>
+              <button class="btn-secondary-large" onclick="ProductDetail.buyNow()">
+                Beli Sekarang
+              </button>
+            </div>
+
+            ${p.link ? `
+            <a href="${p.link}" target="_blank" class="d-block w-100 text-center text-decoration-none" style="padding:0.75rem;background:#40b86b;color:white;border-radius:var(--radius-sm);font-weight:600;transition:var(--transition);margin-bottom:1rem;" onmouseover="this.style.background='#30a05a'" onmouseout="this.style.background='#40b86b'">
+              💚 Beli di Tokopedia
+            </a>
+            ` : ''}
+
+            <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:0.75rem;margin-top:1.5rem;">
+              <div style="background:var(--bg-light);padding:1rem;border-radius:var(--radius-sm);display:flex;align-items:center;gap:0.75rem;">
+                <div style="width:40px;height:40px;background:rgba(16,185,129,0.15);color:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;">🚚</div>
+                <div>
+                  <div style="font-weight:600;font-size:0.85rem;">Gratis Ongkir</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);">Min. belanja Rp 500.000</div>
+                </div>
+              </div>
+              <div style="background:var(--bg-light);padding:1rem;border-radius:var(--radius-sm);display:flex;align-items:center;gap:0.75rem;">
+                <div style="width:40px;height:40px;background:rgba(99,102,241,0.15);color:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;">🛡️</div>
+                <div>
+                  <div style="font-weight:600;font-size:0.85rem;">Garansi Resmi</div>
+                  <div style="font-size:0.75rem;color:var(--text-muted);">100% Produk Original</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       ${p.specifications ? `
-      <div class="row mt-5">
-        <div class="col-12">
-          <h4>Spesifikasi</h4>
-          <table class="table" id="pdSpecsTable">
-            ${Object.entries(p.specifications).map(([key, val]) => `
-              <tr>
-                <td style="font-weight: 600;">${key}</td>
-                <td>${val}</td>
-              </tr>
-            `).join('')}
-          </table>
-        </div>
+      <div class="specs-section animate-fade-in-up" style="animation-delay:200ms;">
+        <h3 class="specs-title">📋 Spesifikasi Produk</h3>
+        <table class="specs-table">
+          ${Object.entries(p.specifications).map(([key, val]) => `
+            <tr>
+              <td>${key}</td>
+              <td>${val}</td>
+            </tr>
+          `).join('')}
+        </table>
       </div>
       ` : ''}
 
-      <div class="row mt-5">
-        <div class="col-12">
-          <h4>Produk Terkait</h4>
-          <div id="relatedProductsGrid" class="row"></div>
-        </div>
+      <div class="related-section">
+        <h2 class="section-title" style="margin-bottom:1.5rem;">Produk Terkait</h2>
+        <div class="row" id="relatedProductsGrid"></div>
       </div>
     `;
 
@@ -95,25 +183,60 @@ const ProductDetail = {
     const mainImg = document.getElementById('productMainImage');
     if (mainImg) mainImg.src = src;
 
-    document.querySelectorAll('.thumb-item').forEach(t => t.style.borderColor = 'transparent');
-    if (element) element.style.borderColor = 'var(--primary-color, #0d6efd)';
+    document.querySelectorAll('.thumb-item').forEach(t => t.classList.remove('active'));
+    if (element) element.classList.add('active');
   },
 
-  addToCart() {
-    const qtyInput = document.getElementById('pdQuantity');
-    const qty = qtyInput ? parseInt(qtyInput.value) || 1 : 1;
-    // Pastikan Cart tersedia, jika tidak, abaikan
-    if (typeof Cart !== 'undefined') {
-      Cart.add(this.currentProduct.id, qty, this.selectedColor, this.selectedSize);
+  selectSize(size, element) {
+    this.selectedSize = size;
+    document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+    if (element) element.classList.add('active');
+  },
+
+  selectColor(color, element) {
+    this.selectedColor = color;
+    document.querySelectorAll('.color-btn').forEach(b => b.classList.remove('active'));
+    if (element) element.classList.add('active');
+  },
+
+  changeQuantity(delta) {
+    const newQty = Math.max(1, this.quantity + delta);
+    this.setQuantity(newQty);
+  },
+
+  setQuantity(value) {
+    const newQty = Math.max(1, parseInt(value) || 1);
+    this.quantity = newQty;
+    const input = document.getElementById('quantityInput');
+    if (input) input.value = newQty;
+  },
+
+  toggleWishlist(btnElement) {
+    if (!this.currentProduct) return;
+    const isActive = Wishlist.toggle(this.currentProduct.id);
+    if (btnElement) {
+      const svg = btnElement.querySelector('svg');
+      if (svg) {
+        svg.setAttribute('fill', isActive ? 'currentColor' : 'none');
+      }
+      btnElement.classList.toggle('active', isActive);
     }
   },
 
-  buyNow() {
-    this.addToCart();
-    window.location.href = 'cart.html';
+  addToCart() {
+    if (!this.currentProduct) return;
+    Cart.add(this.currentProduct.id, this.quantity, this.selectedColor, this.selectedSize);
   },
 
-  async renderRelatedProducts() {
+  buyNow() {
+    if (!this.currentProduct) return;
+    Cart.add(this.currentProduct.id, this.quantity, this.selectedColor, this.selectedSize);
+    setTimeout(() => {
+      window.location.href = '../cart/index.html';
+    }, 500);
+  },
+
+  renderRelatedProducts() {
     const container = document.getElementById('relatedProductsGrid');
     if (!container) return;
 
@@ -121,21 +244,34 @@ const ProductDetail = {
       p => p.category === this.currentProduct.category && p.id !== this.currentProduct.id
     ).slice(0, 4);
 
-    container.innerHTML = related.map(p => `
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm">
-          <img src="${p.images[0]}" class="card-img-top" alt="${p.name}" style="height: 200px; object-fit: cover;">
-          <div class="card-body d-flex flex-column">
-            <h6 class="card-title">${p.name}</h6>
-            <p class="card-text text-muted">~Rp ${p.price.toLocaleString('id-ID')}</p>
-            <a href="product.html?id=${p.id}" class="btn btn-sm btn-outline-primary mt-auto">Lihat Detail</a>
+    if (related.length === 0) {
+      container.innerHTML = '<p class="text-muted">Tidak ada produk terkait.</p>';
+      return;
+    }
+
+    container.innerHTML = related.map((p, idx) => {
+      const image = Array.isArray(p.images) ? p.images[0] : p.images;
+      return `
+        <div class="col-6 col-md-4 col-lg-3 mb-4 animate-fade-in-up" style="animation-delay:${idx * 100}ms;">
+          <div class="product-card h-100">
+            <div class="product-image-wrapper">
+              <img src="${image}" alt="${p.name}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400'" style="object-fit:cover;">
+            </div>
+            <div class="product-body">
+              <span class="product-category">${p.category}</span>
+              <h3 class="product-name">${p.name.length > 45 ? p.name.slice(0, 45) + '...' : p.name}</h3>
+              <div class="product-footer" style="padding-top:0.75rem;">
+                <div class="product-price" style="font-size:0.95rem;">Rp ${p.price.toLocaleString('id-ID')}</div>
+              </div>
+              <button class="btn-detail mt-2" onclick="window.location.href='product.html?id=${p.id}'">
+                Lihat Detail
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-    `).join('');
-  },
-  
-  trackRecentlyViewed(id) {}
+      `;
+    }).join('');
+  }
 };
 
 document.addEventListener('DOMContentLoaded', () => {
