@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <title>Pusat Bantuan - NesoZio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-fluid px-lg-4">
+            <a class="navbar-brand animate__animated animate__fadeInLeft" href="../index.html"><img src="../assets/logo.webp" width="120px" /> </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../search/index.html">Produk</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#kategori">Kategori</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="./index.html">Bantuan</a></li>
+                </ul>
+                <div class="search-wrapper me-lg-3 mb-2 mb-lg-0">
+                    <input class="form-control search-input" type="search" placeholder="Cari bantuan..." aria-label="Search"/>
+                </div>
+                <div class="nav-icons">
+                    <button class="nav-icon-btn" onclick="window.location.href='../cart/index.html'" title="Keranjang">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                        <span class="cart-badge" style="display:none;">0</span>
+                    </button>
+                    <div class="profile-btn-wrapper"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container px-lg-4 py-5">
+        <div class="text-center mb-5 animate-fade-in-up">
+            <div style="font-size:4rem;margin-bottom:1rem;">💬</div>
+            <h1 style="font-size:clamp(1.75rem,4vw,2.5rem);font-weight:800;">Pusat Bantuan NesoZio</h1>
+            <p style="color:var(--text-muted);max-width:600px;margin:0.5rem auto 0;">
+                Temukan jawaban untuk pertanyaanmu tentang belanja, pengiriman, pembayaran, dan lainnya.
+            </p>
+        </div>
+
+        <div class="animate-fade-in-up" style="animation-delay:200ms;">
+            <h2 style="font-weight:700;margin-bottom:1.5rem;font-size:1.5rem;">❓ Pertanyaan yang Sering Diajukan</h2>
+            <div class="accordion" id="faqAccordion">
+                <div style="background:var(--white);border-radius:var(--radius);border:1px solid #e2e8f0;margin-bottom:0.75rem;overflow:hidden;">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" style="background:var(--white);font-weight:600;padding:1.25rem 1.5rem;">
+                            1. Bagaimana cara memesan produk di NesoZio?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div style="padding:1rem 1.5rem 1.5rem;color:var(--text-muted);border-top:1px solid #f1f5f9;">
+                            Sangat mudah! Cukup telusuri produk yang kamu inginkan, klik "Tambah Keranjang" atau "Beli Sekarang", lalu lanjutkan ke halaman checkout untuk mengisi data pengiriman dan memilih metode pembayaran. Dalam beberapa hari ke depan tim kami akan merespon pesanan dan menghubungi anda melalui email/telepon.
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background:var(--white);border-radius:var(--radius);border:1px solid #e2e8f0;margin-bottom:0.75rem;overflow:hidden;">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" style="background:var(--white);font-weight:600;padding:1.25rem 1.5rem;">
+                            2. Metode pembayaran apa saja yang tersedia?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div style="padding:1rem 1.5rem 1.5rem;color:var(--text-muted);border-top:1px solid #f1f5f9;">
+                            Kami menerima berbagai metode pembayaran: Transfer Bank (BCA, BNI, BRI, Mandiri), E-Wallet (GoPay, OVO, DANA), dan COD (Bayar di Tempat) khusus wilayah Bandung dan sekitarnya.
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background:var(--white);border-radius:var(--radius);border:1px solid #e2e8f0;margin-bottom:0.75rem;overflow:hidden;">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" style="background:var(--white);font-weight:600;padding:1.25rem 1.5rem;">
+                            3. Berapa lama waktu pengiriman pesanan?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div style="padding:1rem 1.5rem 1.5rem;color:var(--text-muted);border-top:1px solid #f1f5f9;">
+                            Pengiriman reguler membutuhkan 2-4 hari kerja, sedangkan express 1 hari kerja. Estimasi dimulai setelah pesanan dikonfirmasi dan pembayaran diterima.
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background:var(--white);border-radius:var(--radius);border:1px solid #e2e8f0;margin-bottom:0.75rem;overflow:hidden;">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" style="background:var(--white);font-weight:600;padding:1.25rem 1.5rem;">
+                            4. Bagaimana jika produk yang diterima cacat atau salah?
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div style="padding:1rem 1.5rem 1.5rem;color:var(--text-muted);border-top:1px solid #f1f5f9;">
+                            Kamu bisa mengajukan pengembalian barang dalam 3 hari setelah diterima. Hubungi Customer Service kami untuk proses klaim garansi atau retur. 100% produk dijamin original!
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background:var(--white);border-radius:var(--radius);border:1px solid #e2e8f0;margin-bottom:0.75rem;overflow:hidden;">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" style="background:var(--white);font-weight:600;padding:1.25rem 1.5rem;">
+                            5. Apakah ada biaya untuk ongkos kirim?
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div style="padding:1rem 1.5rem 1.5rem;color:var(--text-muted);border-top:1px solid #f1f5f9;">
+                            GRATIS ongkir untuk pembelian minimal Rp 500.000. Di bawah itu, akan dikenakan biaya ongkir sesuai tujuan pengiriman dimulai dari Rp 15.000.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top:4rem;background:linear-gradient(135deg,var(--primary),var(--primary-dark));padding:3rem 2rem;border-radius:var(--radius-lg);color:var(--white);text-align:center;" class="animate-fade-in-up">
+            <h2 style="font-weight:700;margin-bottom:0.75rem;">Masih Ada Pertanyaan?</h2>
+            <p style="opacity:0.9;margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto;">
+                Tim Customer Service kami siap membantu kamu dengan senang hati!
+            </p>
+            <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+                <a href="https://wa.me/6283845486753" target="_blank" style="background:#25D366;color:white;padding:0.85rem 2rem;border-radius:50px;font-weight:600;text-decoration:none;transition:var(--transition);display:inline-flex;align-items:center;gap:0.5rem;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+                    💬 WhatsApp CS
+                </a>
+                <a href="mailto:nesoziostore@gmail.com" style="background:rgba(255,255,255,0.2);color:white;padding:0.85rem 2rem;border-radius:50px;font-weight:600;text-decoration:none;backdrop-filter:blur(10px);border:2px solid rgba(255,255,255,0.3);transition:var(--transition);display:inline-flex;align-items:center;gap:0.5rem;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+                    ✉️ Email
+                </a>
+            </div>
+        </div>
+
+        <div class="row g-4 mt-4">
+            <div class="col-md-4">
+                <div style="background:var(--white);padding:2rem;border-radius:var(--radius);box-shadow:var(--shadow-sm);border:1px solid #e2e8f0;text-align:center;transition:var(--transition);cursor:pointer;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='var(--shadow-sm)'">
+                    <div style="margin-bottom:1rem;"><img src="../assets/by/milano.webp" width="120px" style="border-radius: 10px;"/></div>
+                    <h4 style="font-weight:700;margin-bottom:0.5rem;">Rizki Milano</h4>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div style="background:var(--white);padding:2rem;border-radius:var(--radius);box-shadow:var(--shadow-sm);border:1px solid #e2e8f0;text-align:center;transition:var(--transition);cursor:pointer;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='var(--shadow-sm)'">
+                    <div style="margin-bottom:1rem;"><img src="../assets/by/surya.webp" width="120px" style="border-radius: 10px;"/></div>
+                    <h4 style="font-weight:700;margin-bottom:0.5rem;">Muhammad Surya Anugerah</h4>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div style="background:var(--white);padding:2rem;border-radius:var(--radius);box-shadow:var(--shadow-sm);border:1px solid #e2e8f0;text-align:center;transition:var(--transition);cursor:pointer;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='var(--shadow-sm)'">
+                    <div style="margin-bottom:1rem;"><img src="../assets/by/indra.webp" width="120px" style="border-radius: 10px;"/></div>
+                    <h4 style="font-weight:700;margin-bottom:0.5rem;">Indra Galih Komarudin</h4>
+                </div>
+            </div>
+		</div>
+		
+    </div>
+
+    <footer class="footer">
+        <div class="container px-lg-4">
+            <div class="footer-bottom" style="border:none;margin:0;padding:0;text-align:center;">
+                © 2026 NesoZio. Semua hak dilindungi.
+            </div>
+        </div>
+    </footer>
+    
+    <script src="../js/products.js"></script>
+    <script src="../js/db-bridge.js"></script>
+    <script src="../js/navbar-product.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
