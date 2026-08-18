@@ -56,7 +56,7 @@ const Navbar = {
           const img = Array.isArray(p.images) ? p.images[0] : p.images;
           return `
             <div class="search-item d-flex" onclick="window.location.href='./product/index.html?id=${p.id}'">
-              <img src="${img}" alt="${p.name}" onerror="this.src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=200'">
+              <img src="${img}" alt="${p.name}" onerror="this.src='https://i.ibb.co.com/FqYtjpLF/Proyek-Baru-B352-F56.png'">
               <div class="flex-grow-1">
                 <h6>${p.name.length > 45 ? p.name.slice(0, 45) + '...' : p.name}</h6>
                 <div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:0.25rem;">${p.category} • ${p.brand}</div>

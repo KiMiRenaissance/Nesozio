@@ -134,8 +134,8 @@ const ProductDetail = {
 	          </div>
 
 	          ${p.link ? `
-	          <a href="${p.link}" target="_blank" class="btn-tokopedia">
-	            💚 Beli di Tokopedia
+	          <a href="${p.link}" target="_blank" class="btn-shopee">
+	            Beli di tempat lain
 	          </a>
 	          ` : ''}
 	
