@@ -1,558 +1,823 @@
 /* ==========================================================================
    NesoZio - PRODUCTS DATABASE
    ========================================================================== */
-
+// ditunggu datanya Surya
 const PRODUCTS = [
   {
-    id: 1,
-    name: "Tangzu Waner 2 Emerald Jade Dragon Edition",
-    price: 449.000,
-    brand: "Tangzu",
-    category: "Electronics",
-    description: "Versi yang telah ditingkatkan ini mempertahankan karakter aslinya sembari menghadirkan penyempurnaan pada desain, material, dan performa, menjadikannya pilihan yang semakin memikat bagi para audiophile. Kini tersedia dalam dua pilihan warna yang memukau—putih dan hitam—yang masing-masing memiliki daya tarik tersendiri: warna putih mencerminkan kesan murni yang ramping dan elegan, sementara warna hitam memancarkan keanggunan yang berani dan tak lekang oleh waktu.",
+    id: 41,
+	badge: 'hot',
+    name: "EIGER CRUISER 2.0 BACKPACK 25L", // nama produk
+    price: 574000, // harga, ubah saja, tidak usah pakai rp
+    brand: "EIGER", // nama brand
+    category: "Tas", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "Mulai dari kegiatan harian sampai traveling, ransel Cruiser 2.0 Backpack Tote 25L siap menemanimu! Ransel dari EIGER 1989 ini hadir dengan panel belakang dan tali gendong yang empuk desain dan kombinasi warna klasik untuk melengkapi style kasualmu. Dengan bahan berdaya tahan kuat dan water-repellent yang melindungi dari cipratan air dan hujan ringan, ransel berkapasitas 25 L ini hadir dengan kompartemen utama yang luas dan beberapa saku untuk memuat berbagai bawaan harian yang kamu perlukan saat beraktivitas.", // deskripsi produk
     images: [
-      "content://com.android.chrome.FileProvider/images/screenshot/17860970608027990813166281130259.jpg",
-      "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800&auto=format&fit=crop&q=80"
-    ],
-    link: "https://www.tokopedia.com/csi-zone/tangzu-waner-2-emerald-jade-dragon-edition-10mm-dynamic-driver-in-ear-monitor-earphone-1732043530240427572?aff_unique_id=&channel=others&chain_key=&backURL=https%3A%2F%2Fwww.tokopedia.com%2Fcsi-zone%2Ftangzu-harmonic-empire-cai-wen-ji-cai-wenji-dynamic-driver-in-ear-monitor-earphone-1735804918108620340-1735804918155347508%3FextParam%3Divf%253Dfalse%2526keyword%253Dcvj%2Bvivian%2526search_id%253D20260807104512FE73F687E5BC52244SLA%2526src%253Dsearch%2526whid%253D690897%26t_id%3D1786099508745%26t_st%3D2%26t_pp%3Dsearch_result%26t_efo%3Dsearch_pure_goods_card%26t_ef%3Dgoods_search%26t_sm%3D%26t_spt%3Dsearch_result&backMethod=browser&t_id=1786099508745&t_st=3&t_pp=product_detail&t_efo=horizontal_goods_card&t_ef=goods_search&t_sm=rec_product_detail_outer_pdp_same_shop_module&t_spt=product_detail&bottomsheet=product_detail&bottomsheet_type=description"
-  },
-  {
-    id: 2,
-    name: "Ultra-Slim Chronograph Leather Watch",
-    price: 199.50,
-    brand: "Titan Luxe",
-    category: "Fashion",
-    description: "Handcrafted Italian leather strap combined with a scratch-resistant sapphire crystal glass face and minimalist dial design.",
-    images: [
-      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&auto=format&fit=crop&q=80"
-    ],
-    sizes: ["38mm", "42mm"],
-    colors: ["#78350F", "#0F172A"],
+		"https://down-id.img.susercontent.com/file/id-11134207-7r98s-lsuzil41thro31.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7r992-lsuzil41uwc43c.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7r98p-lsuzil41xph0f5.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7r98t-lsuzil41z41ga2.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7r98x-lsuzil421x6cae.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
+    colors: ["black", "green", "navy", "khaki"], // warna produk kalau ada (pakai bahasa inggris, contoh: red, blue, green)
     specifications: {
-      "Movement": "Japanese Quartz",
-      "Water Resistance": "50 Meters",
-      "Strap Material": "Genuine Leather",
-      "Case Diameter": "42mm"
-    },
-    link: ""
+      "Dimension": "29 x 16 x 47 cm (Vol 25L)",
+      "Material": "850D Polamo, Polyester 1200D"
+    }, // spesifikasi produk (contoh: "buatan": "Indonesia",)
+    link: "https://shopee.co.id/EIGER-CRUISER-2.0-BACKPACK-25L-i.19260065.3972390341?extraParams=%7B%22display_model_id%22%3A82113097978%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
   },
   {
-    id: 3,
-    name: "Pro Performance Running Shoes - Neon Kinetic",
-    price: 159.00,
-    brand: "Nike",
-    category: "Footwear",
-    description: "Engineered mesh upper for high breathability, paired with ultra-responsive carbon fiber foam cushioning for peak marathon speed.",
+    id: 42,
+	badge: 'sale',
+    name: "Sepatu Kodachi 8116 HP Hitam Putih Sneakers Pria Wanita Olahraga", // nama produk
+    price: 130000, // harga, ubah saja, tidak usah pakai rp
+    brand: "Kodachi", // nama brand
+    category: "Sepatu", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "Sepatu Kodachi lebih di kenal dengan sepatu Capung, bisa dipakai untuk berbagai jenis/cabang olahraga, seperti badminton, volley, takraw, parkour, dll. Sepatu Kodachi ini sangat nyaman di gunakan dengan tapak/sol full karet sehingga anti slip pada saat digunakan. Monggo silahkan diorder, untuk panjang sepatu silahkan lihat ditabel", // deskripsi produk
     images: [
-      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=800&auto=format&fit=crop&q=80"
-    ],
-    sizes: ["US 8", "US 9", "US 10", "US 11"],
-    colors: ["#EF4444", "#10B981", "#2563EB"],
+		"https://down-id.img.susercontent.com/file/3001842770d1824e99e5612ebff33e0b.webp",
+		"https://down-id.img.susercontent.com/file/id-11134201-23030-zzdh6nw217nv82.webp",
+		"https://down-id.img.susercontent.com/file/id-11134201-23030-wypd0t1217nv22.webp",
+		"https://down-id.img.susercontent.com/file/25c55dc64fa5175acc805b1d753d2cc7.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
+    sizes: ["34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45"], // ukuran produk kalau ada, bisa kamu tambah sendiri
     specifications: {
-      "Cushioning": "Carbon Foam Matrix",
-      "Weight": "210g",
-      "Surface": "Road / Track",
-      "Closure": "Lace-up"
-    },
-    link: ""
+      "Asal Produk": "Indonesia",
+      "Kode Seri": "8116 Hitam Putih"
+    }, // spesifikasi produk (contoh: "buatan": "Indonesia",)
+    link: "https://shopee.co.id/Sepatu-Kodachi-8116-HP-Hitam-Putih-Sneakers-Pria-Wanita-Olahraga-i.312908080.13165217514?extraParams=%7B%22display_model_id%22%3A133325309533%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
   },
   {
-    id: 4,
-    name: "Ergonomic Smart Desk Lamp with Wireless Charging",
-    price: 89.99,
-    brand: "Lumigen",
-    category: "Smart Home",
-    description: "Adjustable color temperature, touch slide dimming, eye-friendly zero flicker LED technology, and integrated 15W Qi wireless charger.",
+    id: 43,
+	badge: 'sale',
+    name: "Aimilo Gel Pen Pulpen Gel 3 Warna 0.5mm 1 PCS", // nama produk
+    price: 990, // harga, ubah saja, tidak usah pakai rp
+    brand: "Aimilo", // nama brand
+    category: "Alat Tulis", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "Aimilo Pulpen Gel hadir dengan pilihan tinta hitam, biru, dan merah yang cocok untuk menulis, mencatat, maupun menandai dokumen. Memiliki panjang 145 mm dengan ujung pena 0,5 mm tipe bullet tip, pulpen ini menghasilkan tulisan yang halus, rapi, dan akurat. Dilengkapi soft grip yang nyaman digenggam serta tinta berbasis air yang mudah digunakan, pulpen ini memiliki badan transparan sehingga sisa tinta dapat terlihat dengan jelas. Harga yang tercantum adalah harga satuan.", // deskripsi produk
     images: [
-      "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1534349762230-e0cadf78f5da?w=800&auto=format&fit=crop&q=80"
-    ],
-    sizes: ["Standard"],
-    colors: ["#FFFFFF", "#0F172A"],
+		"https://down-id.img.susercontent.com/file/id-11134207-82250-ml78vv965atkd0.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-8224w-ml78vv8xzq4k45.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-82250-ml78vv8y14p083.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-82252-ml78vv8y2j9g89.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-8224u-ml78vv8y85j898.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
+    colors: ["black", "red", "blue"], // warna produk kalau ada (pakai bahasa inggris, contoh: red, blue, green)
     specifications: {
-      "Wireless Output": "15W Fast Charge",
-      "Color Temp": "2700K - 6500K",
-      "Brightness Levels": "5 Step Dimming"
-    },
-    link: ""
+      "Jenis Pulpen": "Pulpen Gel",
+      "Minimum Jumlah Pembelian": "2",
+      "Ketebalan": "0.5mm"
+    }, // spesifikasi produk (contoh: "buatan": "Indonesia",)
+    link: "https://shopee.co.id/Aimilo-Gel-Pen-Pulpen-Gel-3-Warna-0.5mm-1-PCS-i.1112780441.19595102538?extraParams=%7B%22display_model_id%22%3A255011688669%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
   },
   {
-    id: 5,
-    name: "Minimalist Water-Resistant Travel Backpack",
-    price: 119.95,
-    brand: "Nomad",
-    category: "Accessories",
-    description: "Crafted with 1000D Cordura ballistic nylon, dedicated padded 16-inch laptop pocket, anti-theft hidden zippers, and trolley sleeve.",
+    id: 44,
+    name: "Daiso Electric Eraser", // nama produk
+    price: 33000, // harga, ubah saja, tidak usah pakai rp
+    brand: "Daiso Japan", // nama brand
+    category: "Alat Tulis", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "Penghapus elektrik Daiso Japan Official berbahan ABS plastic, baja, dan karet sintetis dengan ukuran ringkas 2,5 × 2 × 11,2 cm, sehingga mudah dibawa dan dioperasikan hanya dengan menekan satu tombol. Alat ini dirancang untuk menghapus bagian-bagian kecil secara rapi dan bersih, cocok digunakan untuk keperluan menggambar, menulis, maupun pekerjaan kantor. Menggunakan 2 baterai tipe AAA dan dilengkapi karet pengganti yang dijual terpisah. Jangan gunakan pada tubuh manusia, lepaskan baterai jika tidak digunakan dalam waktu lama, dan jauhkan dari air. Daiso Japan Official menyediakan berbagai kebutuhan harian, perlengkapan kantor, serta aksesori dengan pilihan produk yang beragam.", // deskripsi produk
     images: [
-      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?w=800&auto=format&fit=crop&q=80"
-    ],
-    sizes: ["20L", "28L"],
-    colors: ["#334155", "#0F172A"],
+		"https://down-id.img.susercontent.com/file/id-11134207-7r991-lnqyx0kmwg7538.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7r992-lnqyx0kmwgp35e.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7r98t-lnqwz0y6gfihab.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7r98r-lnqyx0kmwgnq92.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7r98w-lnqyx0kmwgho30.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
+    colors: ["white", "grey", "blue"], // warna produk kalau ada (pakai bahasa inggris, contoh: red, blue, green)
     specifications: {
-      "Laptop Sleeve": "Fits up to 16-inch",
-      "Material": "Waterproof Cordura Nylon",
-      "Volume": "25 Liters"
-    },
-    link: ""
+      "Produk Custom": "Tidak"
+    }, // spesifikasi produk (contoh: "buatan": "Indonesia",)
+    link: "https://shopee.co.id/Daiso-Electric-eraser-i.471567767.22460321437?extraParams=%7B%22display_model_id%22%3A222246553416%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
   },
   {
-    id: 6,
-    name: "Spatial Smart Speaker with Voice Assistant",
-    price: 179.99,
-    brand: "EchoSound",
-    category: "Electronics",
-    description: "Room-filling 360-degree acoustics, rich deep bass, multi-room synchronization, and seamless voice assistant integration.",
+    id: 45,
+    name: "Pensil Warna Kualitas CP-12F Classic - SET", // nama produk
+    price: 20350, // harga, ubah saja, tidak usah pakai rp
+    brand: "KENKO", // nama brand
+    category: "Alat Tulis", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "KENKO Pensil Warna CP-12F Classic hadir dalam set isi 12 warna dengan hasil warna cerah yang menarik, cocok untuk aktivitas sekolah maupun hobi mewarnai sehari-hari. Ujung pensilnya dirancang kuat dan tidak mudah patah, sehingga lebih tahan lama saat digunakan. Bentuk dan teksturnya nyaman digenggam, memberikan pengalaman mewarnai yang lebih halus dan menyenangkan.", // deskripsi produk
     images: [
-      "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=800&auto=format&fit=crop&q=80"
-    ],
-    sizes: ["Standard"],
-    colors: ["#0F172A", "#E2E8F0"],
+		"https://down-id.img.susercontent.com/file/id-11134207-82251-ml4di3aujpxd77.webp",
+		"https://down-id.img.susercontent.com/file/sg-11134201-7rav5-mavbfh81wytt34.webp",
+		"https://down-id.img.susercontent.com/file/sg-11134201-7raui-mavbfi0mr59y0f.webp",
+		"https://down-id.img.susercontent.com/file/sg-11134201-7rauj-mavbfinxrmttc4.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
     specifications: {
-      "Drivers": "Dual Tweeters + Subwoofer",
-      "Connectivity": "Wi-Fi 6, Bluetooth 5.2, AirPlay 2",
-      "Microphones": "Far-field 4-mic Array"
-    },
-    link: ""
+      "Produk Custom": "Tidak"
+    }, // spesifikasi produk (contoh: "buatan": "Indonesia",)
+    link: "https://shopee.co.id/KENKO-Pensil-Warna-Kualitas-CP-12F-Classic-SET-i.27729303.41254153392?extraParams=%7B%22display_model_id%22%3A285353257418%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
   },
   {
-    id: 7,
-    name: "Classic Organic Cotton Denim Jacket",
-    price: 129.00,
-    brand: "Levi",
-    category: "Fashion",
-    description: "100% sustainable organic denim jacket featuring timeless trucker styling, vintage metal hardware, and dual buttoned chest pockets.",
+    id: 46,
+    name: "Derwent Charcoal Pencil Pensil Arang untuk Menggambar, Sketsa & Shading Original Inggris", // nama produk
+    price: 35000, // harga, ubah saja, tidak usah pakai rp
+    brand: "Derwent", // nama brand
+    category: "Alat Tulis", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "Derwent Charcoal Pencil menghadirkan hasil seperti arang tradisional, namun dalam bentuk pensil yang bersih dan mudah dikendalikan. Terbuat dari arang murni berkualitas tinggi yang dikompres secara presisi, pensil ini memungkinkan Anda menciptakan bayangan gelap, tekstur kaya, dan detail halus dengan kontrol maksimal.", // deskripsi produk
     images: [
-      "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=800&auto=format&fit=crop&q=80"
-    ],
-    sizes: ["S", "M", "L", "XL"],
-    colors: ["#2563EB", "#1E293B"],
+		"https://down-id.img.susercontent.com/file/id-11134207-7rbk5-m96st2ein019da.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7rbk0-m96st2eipt659f.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7rbk2-m96st2eismb18c.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7rbkd-m96st2eir7ql8b.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7rbk7-m96st2eioelp55.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
+    sizes: ["Dark", "Medium", "Light"], // ukuran produk kalau ada, bisa kamu tambah sendiri
     specifications: {
-      "Material": "100% Organic Denim",
-      "Fit": "Regular Fit",
-      "Care": "Machine Wash Cold"
-    },
-    link: ""
+      "Diameter Inti (Core)": "4 mm",
+      "Diameter Barrel": "8 mm"
+    }, // spesifikasi produk (contoh: "buatan": "Indonesia",)
+    link: "https://shopee.co.id/Derwent-Charcoal-Pencil-Pensil-Arang-untuk-Menggambar-Sketsa-Shading-Original-Inggris-i.102918886.5538086541?extraParams=%7B%22display_model_id%22%3A19673316927%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
   },
   {
-    id: 8,
-    name: "4K OLED Ultra-Clear Curved Gaming Monitor 34\"",
-    price: 899.99,
-    brand: "Asus",
-    category: "Electronics",
-    description: "175Hz refresh rate, 0.03ms response time, HDR10+, and 1800R curved display for immersive high-framerate gameplay.",
+    id: 47,
+    name: "Dasi Sekolah SD SMP SMA dengan Bordir Rapi dan Jahitan Presisi", // nama produk
+    price: 10000, // harga, ubah saja, tidak usah pakai rp
+    brand: "Zeragamku", // nama brand
+    category: "Aksesoris", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "", // deskripsi produk
     images: [
-      "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&auto=format&fit=crop&q=80"
-    ],
-    sizes: ["34 Inch"],
-    colors: ["#0F172A"],
+		"https://down-id.img.susercontent.com/file/id-11134207-822wr-morscik5dz4ff7.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
+    sizes: ["SD Perempuan", "SD Laki-laki", "SMP", "SMA"], // ukuran produk kalau ada, bisa kamu tambah sendiri
     specifications: {
-      "Resolution": "3440 x 1440 UWQHD",
-      "Refresh Rate": "175Hz OLED",
-      "Response Time": "0.03ms GTG"
-    },
-    link: ""
+      "Jenis Kelamin": "Unisex",
+      "Asal Produk": "Indonesia",
+      "Motif": "Polos, Lainnya, bordir timbul, logo bordir",
+      "Bahan": "kain seragam"
+    }, // spesifikasi produk (contoh: "buatan": "Indonesia",)
+    link: "https://shopee.co.id/Dasi-Sekolah-SD-SMP-SMA-dengan-Bordir-Rapi-dan-Jahitan-Presisi-i.1440882216.48111284471?extraParams=%7B%22display_model_id%22%3A330981875201%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
   },
   {
-    id: 9,
-    name: "Automatic Espresso Machine & Milk Frother",
-    price: 499.00,
-    brand: "DeLonghi",
-    category: "Home & Kitchen",
-    description: "19-bar professional Italian pump, integrated burr grinder with 13 grind settings, and automatic micro-foam milk frothing wand.",
+    id: 48,
+	badge: 'hot',
+    name: "Paket 3 Pasang Kaos Kaki Panjang Selutut Formal Pria Wanita Dewasa Bahan Katun Lembut", // nama produk
+    price: 21000, // harga, ubah saja, tidak usah pakai rp
+    brand: "ALGO JAYA", // nama brand
+    category: "Aksesoris", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "Kaos kaki panjang selutut ini diproduksi dengan teknologi TCM (Technologi Computer Machine) yang menghasilkan pola dan jahitan lebih konsisten, sehingga nyaman dipakai sepanjang hari untuk aktivitas formal, sekolah, maupun casual. Berbahan perpaduan cotton PE, spandex, dan elastic yang lembut, aman, serta baik dalam menyerap keringat, dilengkapi SPC Rubb anti membleh agar bentuk tetap rapi. Model one size dewasa cocok untuk ukuran sepatu 37–43, dengan panjang total sekitar 59 cm dan lebar ±9 cm, bersifat unisex sehingga bisa dipakai pria maupun wanita. Tersedia dalam berbagai pilihan warna polos (hitam, putih, abu muda, biru navy, abu tua, coklat tua, atau mix random), dengan harga yang tertera sudah termasuk 3 pasang kaos kaki. Perawatan mudah: cuci maksimal suhu 40°C, jangan gunakan pemutih, jangan dicuci kering, jangan gunakan pengering putar, dan jangan disetrika.", // deskripsi produk
     images: [
-      "https://images.unsplash.com/photo-1517668808822-9ebe02f2a698?w=800&auto=format&fit=crop&q=80"
-    ],
-    sizes: ["Standard"],
-    colors: ["#64748B", "#0F172A"],
+		"https://down-id.img.susercontent.com/file/id-11134207-82252-miciau9n0lj873.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-8224y-miciau9n203od6.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-8224z-miciau9n7mdgc4.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-8224o-miciau9n3eo420.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-8224w-mibxfqsnlfcz6f.webp",
+    	"https://down-id.img.susercontent.com/file/id-11134207-8224y-miciau9n4t8k54.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
+    sizes: ["3 MIX Random Warna", "3 Coklat tua", "3 Abu tua", "3 Biru navy", "3 Abu muda", "3 Putih", "3 Hitam"], // warna produk kalau ada (pakai bahasa inggris, contoh: red, blue, green)
     specifications: {
-      "Pump Pressure": "19 Bar",
-      "Bean Hopper": "250g",
-      "Water Tank": "1.8L"
-    },
-    link: ""
+      "Asal Produk": "Indonesia",
+      "Tipe Paket": "Bundle",
+      "Panjang Kaos Kaki": "Setinggi Lutut",
+      "Bahan": "Katun, Spandex",
+      "Produk Custom": "Tidak"
+    }, // spesifikasi produk (contoh: "buatan": "Indonesia",)
+    link: "https://shopee.co.id/ALGO-JAYA-Paket-3-Pasang-Kaos-Kaki-Panjang-Selutut-Formal-Pria-Wanita-Dewasa-Bahan-Katun-Lembut-i.887620853.43627289313?extraParams=%7B%22display_model_id%22%3A400308144743%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
   },
   {
-    id: 10,
-    name: "Polarized Titanium Sunglasses Classic Aviator",
-    price: 145.00,
-    brand: "RayBan",
-    category: "Accessories",
-    description: "Ultra-lightweight aerospace titanium frames with UV400 anti-glare polarized glass lenses.",
+    id: 49,
+    name: "Jangka Penggaris Busur Pulpen / Compass Drafting Set BE5011", // nama produk
+    price: 47000, // harga, ubah saja, tidak usah pakai rp
+    brand: "Bantex", // nama brand
+    category: "Alat Tulis", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "Bantex Compass BE5011 adalah set peralatan geometri lengkap yang dirancang untuk presisi dan kenyamanan, mencakup jangka berkualitas tinggi beserta alat pendukung esensial seperti penggaris dan pulpen, semuanya tersimpan rapi dalam satu wadah plastik praktis. Jangka utamanya dibuat dari bahan berkualitas tinggi yang kuat dan tahan lama, dengan desain pegangan bergelombang yang memberikan genggaman stabil dan kontrol penuh saat membuat lingkaran atau busur. Ujung jangka dilindungi oleh wadah penyimpanan aman untuk mencegah kerusakan dan menjaga keamanan saat tidak digunakan. Set ini sangat ideal untuk kebutuhan sekolah, kantor, atau aktivitas menggambar teknis sehari-hari.", // deskripsi produk
     images: [
-      "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=800&auto=format&fit=crop&q=80"
-    ],
-    sizes: ["Standard"],
-    colors: ["#F59E0B", "#0F172A"],
+		"https://down-id.img.susercontent.com/file/id-11134275-7rbke-may4wlmnbgq394.webp",
+		"https://down-id.img.susercontent.com/file/id-11134275-7rbk9-may4wm94fzfof2.webp",
+		"https://down-id.img.susercontent.com/file/id-11134275-7rbka-may4wm6mi6r80f.webp",
+		"https://down-id.img.susercontent.com/file/id-11134275-7rbka-may4wmasdi2c3f.webp",
+		"https://down-id.img.susercontent.com/file/id-11134275-7rbke-may4wmiu0c2m08.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
     specifications: {
-      "Frame": "Titanium Alloy",
-      "UV Protection": "100% UV400",
-      "Lens": "Polarized Glass"
-    },
-    link: ""
-  },
-  // Adding products 11 through 40 to reach full 40 realistic database items
-  {
-    id: 11,
-    name: "Wireless Mechanical Keyboard RGB Tactile",
-    price: 139.99,
-    brand: "Keychron",
-    category: "Electronics",
-    description: "Hot-swappable switches, aluminum body, Bluetooth multi-device sync, and customizable per-key RGB backlighting.",
-    images: ["https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=800&auto=format&fit=crop&q=80"],
-    sizes: ["75% Layout", "100% Layout"], colors: ["#1E293B", "#94A3B8"],
-    specifications: { "Switches": "Gateron Brown Tactile", "Connectivity": "Bluetooth / Type-C", "Battery": "4000mAh" },
-    link: ""
+      "Produk": "Compass",
+      "Ref": "BE5011",
+      "Isi Set": "Jangka, Penggaris, Pulpen",
+      "Bahan": "Kokoh dan Tahan Lama",
+      "Fitur Khusus": "Wadah pelindung kompas, pegangan anti-selip, wadah plastik untuk seluruh set"
+    }, // spesifikasi produk (contoh: "buatan": "Indonesia",)
+    link: "https://shopee.co.id/Bantex-Jangka-Penggaris-Busur-Pulpen-Compass-Drafting-Set-BE5011-i.22139865.41654426214?extraParams=%7B%22display_model_id%22%3A253517128687%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
   },
   {
-    id: 12,
-    name: "Professional Mirrorless Camera 24MP 4K",
-    price: 1299.00,
-    brand: "Sony",
-    category: "Electronics",
-    description: "Full-frame sensor, Real-time Eye AF, 5-axis in-body image stabilization, and 4K 60fps video recording.",
-    images: ["https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&auto=format&fit=crop&q=80"],
-    sizes: ["Body Only", "With 24-70mm Lens"], colors: ["#0F172A"],
-    specifications: { "Sensor": "24.2MP Full Frame", "ISO Range": "100-51200", "Video": "4K HDR" },
-    link: ""
+    id: 50,
+    name: "Tas Ransel laptop Backpack Pria 36169 & 36170 Kapasitas 23L - Tas Ransel - Tas Punggung", // nama produk
+    price: 255000, // harga, ubah saja, tidak usah pakai rp
+    brand: "POLOTRANDS", // nama brand
+    category: "Tas", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "Polo Trands Backpack 36169 & 36170 adalah tas ransel berkapasitas 23 liter dengan ukuran 34 × 15 × 46 cm, terbuat dari bahan kanvas premium yang kokoh dan tahan lama dengan berat hanya 900 gram. Dirancang untuk aktivitas sehari-hari, tas ini menawarkan kombinasi gaya modern dan fungsionalitas yang praktis. Tersedia dalam pilihan warna hitam, biru, kopi, abu-abu, dan merah, cocok untuk berbagai kebutuhan dan preferensi gaya.", // deskripsi produk
+    images: [
+		"https://down-id.img.susercontent.com/file/b16c4ed2cdda436d379c306d2de8c541.webp",
+		"https://down-id.img.susercontent.com/file/79397aa885f46c01629e950f982d42be.webp",
+		"https://down-id.img.susercontent.com/file/c7d1325d2ae6799e43049902dd91fb4c.webp",
+		"https://down-id.img.susercontent.com/file/e757e407f24caed32696cf38dd68c898.webp",
+		"https://down-id.img.susercontent.com/file/0ea22340e1fcdf1f63bc3de1b5ed7821.webp",
+	    "https://down-id.img.susercontent.com/file/de8d11051914ff43b0569f65fb7564a8.webp",
+	    "https://down-id.img.susercontent.com/file/82ff6b0b67162fd1ad5192771fa8f5e4.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
+    colors: ["black", "blue", "chocolate", "grey", "red"], // warna produk kalau ada (pakai bahasa inggris, contoh: red, blue, green)
+    specifications: {
+      "Bahan": "Kanvas",
+      "Acara": "Kasual",
+      "Fitur": "Slot Laptop, Slot Tablet",
+      "Motif": "Polos"
+    }, // spesifikasi produk (contoh: "buatan": "Indonesia",)
+    link: "https://shopee.co.id/Polo-Trands-Tas-Ransel-laptop-Backpack-Pria-36169-36170-Kapasitas-23L-Tas-Ransel-Tas-Punggung-i.82163898.3809815606?extraParams=%7B%22display_model_id%22%3A11055375428%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
   },
   {
-    id: 13,
-    name: "Luxury Silk Pillowcase & Eye Mask Set",
-    price: 65.00,
-    brand: "Slip",
-    category: "Home & Kitchen",
-    description: "100% pure Mulberry silk 22 momme, anti-aging, friction-free for smooth hair and skin protection.",
-    images: ["https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=800&auto=format&fit=crop&q=80"],
-    sizes: ["Queen", "King"], colors: ["#F59E0B", "#F8FAFC"],
-    specifications: { "Material": "100% Mulberry Silk", "Grade": "6A 22 Momme" },
-    link: ""
+    id: 51,
+    name: "ALPACA LITE 10 1.0 BACKPACK", // nama produk
+    price: 121550, // harga, ubah saja, tidak usah pakai rp
+    brand: "EIGER", // nama brand
+    category: "Tas", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "Ekstra ringan, ringkas, dan praktis, ransel Alpaca Lite 10 1.0 menemani aktivitas harianmu. Ransel berkapasitas 10 L dari EIGER Mountaineering ini hadir dengan kompartemen utama untuk memuat bawaan esensialmu dan saku depan untuk menyimpan benda-benda berukuran kecil yang dapat kamu akses dengan mudah.", // deskripsi produk
+    images: [
+		"https://down-id.img.susercontent.com/file/id-11134201-23020-rmbeseua3tnvff.webp",
+		"https://down-id.img.susercontent.com/file/id-11134201-23020-hl3a1gua3tnv5c.webp",
+		"https://down-id.img.susercontent.com/file/id-11134201-23020-vpb2nnua3tnvaa.webp",
+		"https://down-id.img.susercontent.com/file/id-11134201-23020-qx3ygn3c3tnv7b.webp",
+		"https://down-id.img.susercontent.com/file/id-11134201-23020-vl98fekk3tnve3.webp",
+	    "https://down-id.img.susercontent.com/file/id-11134201-23020-ql32bsrm3tnv68.webp",
+	    "https://down-id.img.susercontent.com/file/id-11134201-23020-v240ay1o3tnv79.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
+    colors: ["black", "blue", "red", "tosca", "purple", "navy", "brown", "orange", "grey", "green", "maroon"], // warna produk kalau ada (pakai bahasa inggris, contoh: red, blue, green)
+    specifications: {
+      "Bahan": "Polyester",
+      "Dimension": "20 x 14 x 40 cm (Vol 10L)"
+    }, // spesifikasi produk (contoh: "buatan": "Indonesia",)
+    link: "https://shopee.co.id/EIGER-ALPACA-LITE-10-1.0-BACKPACK-i.19260065.12398336927?extraParams=%7B%22display_model_id%22%3A175611381204%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
   },
   {
-    id: 14,
-    name: "Smart Health Tracker Fitness Band",
-    price: 79.99,
-    brand: "Fitbit",
-    category: "Electronics",
-    description: "Continuous heart rate monitoring, SpO2 sensor, sleep score analysis, built-in GPS, and 7-day battery life.",
-    images: ["https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?w=800&auto=format&fit=crop&q=80"],
-    sizes: ["S/M", "L/XL"], colors: ["#10B981", "#0F172A"],
-    specifications: { "Display": "AMOLED Touch", "Water Resistance": "50m", "Battery": "7 Days" },
-    link: ""
+    id: 52,
+    name: "adidas Lifestyle Essentials 3-Stripes Backpack Back To School 2 Unisex Black JX6497", // nama produk
+    price: 600000, // harga, ubah saja, tidak usah pakai rp
+    brand: "adidas", // nama brand
+    category: "Tas", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "Tas ransel adidas ini dirancang untuk menemani aktivitas harianmu, mulai dari sesi olahraga di gym hingga belajar di perpustakaan, dengan konstruksi tahan lama yang dibuat agar awet. Berkapasitas 27,4 liter dan berukuran 44 × 31 cm, tas ini memiliki beberapa kompartemen yang membantu mengatur buku, perangkat teknologi, dan perlengkapan lainnya agar mudah diambil kapan saja. Dibuat dari 100% poliester daur ulang, tas ini tidak hanya praktis, tetapi juga lebih ramah lingkungan.", // deskripsi produk
+    images: [
+		"https://down-id.img.susercontent.com/file/sg-11134201-824j7-mdwsbqbpqhhgec.webp",
+		"https://down-id.img.susercontent.com/file/sg-11134201-824hl-mdwsbqc3tkhy8b.webp",
+		"https://down-id.img.susercontent.com/file/sg-11134201-824iw-mdwsbqctro5gd0.webp",
+		"https://down-id.img.susercontent.com/file/sg-11134201-824gc-mdwsbqbhjjsz42.webp",
+		"https://down-id.img.susercontent.com/file/sg-11134201-824ge-mdwsbqcrjncx24.webp",
+    	"https://down-id.img.susercontent.com/file/sg-11134201-824iz-mdwsbqegj4zre1.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
+    specifications: {
+      "Volume": "27.4 L",
+      "Dimensions": "44 cm x 31 cm"
+    }, // spesifikasi produk (contoh: "buatan": "Indonesia",)
+    link: "https://shopee.co.id/adidas-Lifestyle-Essentials-3-Stripes-Backpack-Back-To-School-2-Unisex-Black-JX6497-i.270510657.43165249369?extraParams=%7B%22display_model_id%22%3A306260885731%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
   },
   {
-    id: 15,
-    name: "Minimalist Ceramic Coffee Mug Set (4 Pcs)",
-    price: 45.00,
-    brand: "Nordic Home",
-    category: "Home & Kitchen",
-    description: "Matte glazed stoneware ceramic mugs designed for espresso, cappuccino, and pour-over coffee.",
-    images: ["https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=80"],
-    sizes: ["350ml"], colors: ["#94A3B8", "#1E293B"],
-    specifications: { "Material": "High-fired Stoneware", "Microwave Safe": "Yes", "Dishwasher Safe": "Yes" },
-    link: ""
+    id: 53,
+    name: "Kalkulator 2 Power 8 Digit Electronic Calculator Big Display MTC-200", // nama produk
+    price: 16213, // harga, ubah saja, tidak usah pakai rp
+    brand: "MONTANA", // nama brand
+    category: "Aksesoris", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "Kalkulator Montana MTC 200 P menampilkan layar 8 digit yang besar dan jelas, memudahkan pembacaan hasil perhitungan dalam berbagai kondisi cahaya. Dilengkapi sistem dual power yang dapat beroperasi menggunakan tenaga surya maupun baterai, kalkulator ini praktis digunakan di mana saja. Dengan ukuran ringkas 9,5 × 6 × 0,8 cm dan berat hanya 125 gram, kalkulator ini mudah dibawa dan cocok untuk kebutuhan sekolah, kantor, maupun penggunaan sehari-hari.", // deskripsi produk
+    images: [
+		"https://down-id.img.susercontent.com/file/id-11134207-822wq-mp7md5kcwgln7a.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-822ws-mp7md5kcxv634f.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-822wh-mp7md5kcz9qjb0.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-822wq-mp7md5kd22vf96.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-822wn-mp7md5kd0oaz4c.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
+    specifications: {
+      "Size": "9.5cm x 6cm x 0.8cm",
+      "Weight": "125 gr"
+    }, // spesifikasi produk (contoh: "buatan": "Indonesia",)
+    link: "https://shopee.co.id/MONTANA-Kalkulator-2-Power-8-Digit-Electronic-Calculator-Big-Display-MTC-200-i.115654595.3111951502?extraParams=%7B%22display_model_id%22%3A50351997143%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
   },
   {
-    id: 16,
-    name: "Air Purifier HEPA H13 True Filter",
-    price: 149.00,
-    brand: "Levoit",
-    category: "Smart Home",
-    description: "Captures 99.97% of airborne particles as small as 0.3 microns. Super quiet sleep mode at 24dB.",
-    images: ["https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&auto=format&fit=crop&q=80"],
-    sizes: ["Medium Room", "Large Room"], colors: ["#FFFFFF"],
-    specifications: { "Filter Type": "H13 True HEPA", "Coverage": "400 sq ft", "Noise Level": "24dB" },
-    link: ""
+    id: 54,
+    name: "Scissors Gunting Stainless Steel Multipurpose Kuat Tajam Anti Karat STI-165/Retail", // nama produk
+    price: 5829, // harga, ubah saja, tidak usah pakai rp
+    brand: "MONTANA", // nama brand
+    category: "Aksesoris", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "Gunting Montana STi-165 terbuat dari bahan stainless steel yang keras, kokoh, dan tahan karat, sehingga tetap tajam serta awet untuk penggunaan jangka panjang. Dirancang tangguh dan nyaman digenggam, gunting ini cocok digunakan untuk berbagai keperluan di sekolah, kantor, maupun rumah. Produk dijual dengan pembelian minimum 1 pcs, dan warna yang dikirim akan disesuaikan secara acak berdasarkan stok yang tersedia.", // deskripsi produk
+    images: [
+		"https://down-id.img.susercontent.com/file/sg-11134201-82629-mkyorg9c9qtgce.webp",
+		"https://down-id.img.susercontent.com/file/id-11134201-7rbk2-m8vh0qikfvnfd4.webp",
+		"https://down-id.img.susercontent.com/file/id-11134201-7rbka-m8vh0qj4f0n68d.webp",
+		"https://down-id.img.susercontent.com/file/id-11134201-7rbk3-m8vh0qkscme6c5.webp",
+		"https://down-id.img.susercontent.com/file/id-11134201-7rbk5-m8vh0qjeelxu46.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
+    specifications: {
+      "Produk Custom": "Tidak",
+      "Bahan Non Halal": "Tidak mengandung bahan Non Halal",
+      "Sertifikat Halal": "Ada"
+    }, // spesifikasi produk (contoh: "buatan": "Indonesia",)
+    link: "https://shopee.co.id/MONTANA-Scissors-Gunting-Stainless-Steel-Multipurpose-Kuat-Tajam-Anti-Karat-STI-165-Retail-i.115654595.4220363171?extraParams=%7B%22display_model_id%22%3A80174419027%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
   },
   {
-    id: 17,
-    name: "Leather Messenger Briefcase Laptop Bag",
-    price: 189.00,
-    brand: "Fossil",
-    category: "Accessories",
-    description: "Full-grain vintage brown leather briefcase with brass fittings and detachable padded shoulder strap.",
-    images: ["https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800&auto=format&fit=crop&q=80"],
-    sizes: ["15-inch"], colors: ["#78350F"],
-    specifications: { "Material": "Full Grain Leather", "Laptop Compartment": "Padded 15.6 inch" },
-    link: ""
+    id: 55,
+    name: "Glue Stick Lem Batang 25g Excellent Adhesive Perekat Serbaguna GS-25/Retail", // nama produk
+    price: 3649, // harga, ubah saja, tidak usah pakai rp
+    brand: "MONTANA", // nama brand
+    category: "Aksesoris", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "Lem batang Montana GS-25 dengan berat 25 gram menawarkan daya rekat yang kuat untuk menempelkan kertas, karton, dan berbagai material ringan lainnya dengan hasil yang rapi dan tahan lama. Berjenis lem batangan yang praktis dan mudah digunakan, produk ini juga non-toxic sehingga aman untuk keperluan sekolah, kantor, maupun proyek kerajinan di rumah. Harga yang tercantum adalah harga untuk 1 pcs.", // deskripsi produk
+    images: [
+		"https://down-id.img.susercontent.com/file/sg-11134201-820nr-mnwq5rgrb01s35.webp",
+		"https://down-id.img.susercontent.com/file/sg-11134201-820li-mnwq5rxfak8w1e.webp",
+		"https://down-id.img.susercontent.com/file/sg-11134201-820mm-mnwq5se68u0z47.webp",
+		"https://down-id.img.susercontent.com/file/sg-11134201-820mz-mnwq5sxqvm6aa9.webp",
+		"https://down-id.img.susercontent.com/file/sg-11134201-820of-mnwq5tb4snwgea.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
+    specifications: {
+      "Jenis Lem": "Lem Stik",
+      "Produk Custom": "Tidak"
+    }, // spesifikasi produk (contoh: "buatan": "Indonesia",)
+    link: "https://shopee.co.id/MONTANA-Glue-Stick-Lem-Batang-25g-Excellent-Adhesive-Perekat-Serbaguna-GS-25-Retail-i.115654595.7367947870?extraParams=%7B%22display_model_id%22%3A32306786211%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
   },
   {
-    id: 18,
-    name: "Trail Blazer Hiking Boots Waterproof",
-    price: 175.00,
-    brand: "Columbia",
-    category: "Footwear",
-    description: "Omni-Tech waterproof breathable membrane with Vibram high-traction rubber lug outsole for rough terrain.",
-    images: ["https://images.unsplash.com/photo-1520639888713-7851133b1ed0?w=800&auto=format&fit=crop&q=80"],
-    sizes: ["US 9", "US 10", "US 11"], colors: ["#78350F", "#1E293B"],
-    specifications: { "Waterproof": "Omni-Tech", "Outsole": "Vibram Rubber", "Weight": "450g" },
-    link: ""
+    id: 56,
+    name: "Pensil Warna 24 Colored Pencils High Pigments Non Toxic TH-750", // nama produk
+    price: 13900, // harga, ubah saja, tidak usah pakai rp
+    brand: "MONTANA", // nama brand
+    category: "Alat Tulis", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "Pensil warna Montana TH-750-24 berisi 24 warna dengan pigmen berkualitas tinggi yang menghasilkan warna halus, cerah, dan mudah dipadukan untuk teknik blending maupun shading. Isi pensilnya tebal dan tidak mudah patah, sehingga nyaman digunakan untuk menggambar, mewarnai, atau membuat sketsa dalam waktu lama. Dibuat dari kayu berkualitas tinggi, pensil ini tahan lama dan cocok untuk kebutuhan seni, sekolah, maupun hobi.", // deskripsi produk
+    images: [
+		"https://down-id.img.susercontent.com/file/sg-11134201-82258-mhfz1vwgy3ut44.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7r98r-lnicq05bel3vd3.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7r990-lnicq05belja32.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7r98p-lnicq05vdrple3.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
+    specifications: {
+      "Jenis Pensil Warna": "Larut Air",
+      "Produk Custom": "Tidak",
+      "Jumlah Warna": "24"
+    }, // spesifikasi produk (contoh: "buatan": "Indonesia",)
+    link: "https://shopee.co.id/MONTANA-Pensil-Warna-24-Colored-Pencils-High-Pigments-Non-Toxic-TH-750-i.115654595.22285209539?extraParams=%7B%22display_model_id%22%3A194709630201%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
   },
   {
-    id: 19,
-    name: "Ergonomic Mesh Executive Office Chair",
-    price: 299.00,
-    brand: "Herman Miller",
-    category: "Home & Kitchen",
-    description: "Breathable 3D mesh backrest, 4D adjustable armrests, dynamic lumbar support, and heavy-duty tilt lock mechanism.",
-    images: ["https://images.unsplash.com/photo-1580481072645-022f9a6d83d0?w=800&auto=format&fit=crop&q=80"],
-    sizes: ["Standard"], colors: ["#0F172A", "#64748B"],
-    specifications: { "Max Capacity": "150kg", "Lumbar Support": "Dynamic Auto-Adjust", "Warranty": "5 Years" },
-    link: ""
+    id: 57,
+    name: "Kalkulator Mini/Mini Expression Calculator Kalkulator Saku Portabel dengan Gantungan Kunci", // nama produk
+    price: 15999, // harga, ubah saja, tidak usah pakai rp
+    brand: "Eeghrerr", // nama brand
+    category: "Aksesoris", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "Gantungan kunci kalkulator mini ini menghadirkan desain lucu dengan ekspresi beragam dan warna-warna permen yang segar, sekaligus berfungsi sebagai kalkulator praktis bertipe flip-top. Terbuat dari plastik berkualitas tinggi yang kokoh dan tahan lama, produk ini dilengkapi tombol silikon yang lembut dan nyaman ditekan. Ukurannya yang ringkas dan portabel membuatnya mudah dibawa ke mana saja, sementara desain gantungan kuncinya memungkinkan kamu menggantungkannya pada tas, tas sekolah, atau kunci sebagai aksesori yang unik dan fungsional.", // deskripsi produk
+    images: [
+		"https://down-id.img.susercontent.com/file/id-11134207-7rasc-m1zbjt4bnthl3b.webp",
+		"https://down-id.img.susercontent.com/file/sg-11134201-7rdwl-m0bjh3qo8684b8.webp",
+		"https://down-id.img.susercontent.com/file/sg-11134201-7rdw7-m0bjgzjqd22872.webp",
+		"https://down-id.img.susercontent.com/file/sg-11134201-7rdx1-m0bjh021m9bk9b.webp",
+		"https://down-id.img.susercontent.com/file/sg-11134201-7rdw2-m0bjh0v6fmbtd1.webp",
+	    "https://down-id.img.susercontent.com/file/sg-11134201-7rdyg-m0bjh1m3c8g934.webp",
+	    "https://down-id.img.susercontent.com/file/sg-11134201-7rdya-m0bjh4breps4af.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
+    colors: ["black", "white", "pink", "blue"], // warna produk kalau ada (pakai bahasa inggris, contoh: red, blue, green)
+    specifications: {
+      "Jenis Kalkulator": "Kecil",
+      "Baterai": "Baterai Kancing (Termasuk)",
+      "Jenis Baterai": "AG10",
+      "Ukuran Produk": "6,4 x 3,6 cm"
+    }, // spesifikasi produk (contoh: "buatan": "Indonesia",)
+    link: "https://shopee.co.id/Eeghrerr-Kalkulator-Mini-Mini-Expression-Calculator-Kalkulator-Saku-Portabel-dengan-Gantungan-Kunci-i.1329282085.29011654378?extraParams=%7B%22display_model_id%22%3A195401031228%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
   },
   {
-    id: 20,
-    name: "Smart Robotic Vacuum & Mop Cleaner",
-    price: 399.00,
-    brand: "Roborock",
-    category: "Smart Home",
-    description: "LiDAR laser navigation, 5000Pa intense suction power, auto dust emptying dock, and smartphone app control.",
-    images: ["https://images.unsplash.com/photo-1558317374-067fb5f30001?w=800&auto=format&fit=crop&q=80"],
-    sizes: ["Standard"], colors: ["#FFFFFF", "#0F172A"],
-    specifications: { "Suction Power": "5000Pa", "Navigation": "LiDAR 3D", "Runtime": "180 Mins" },
-    link: ""
+    id: 58,
+	badge: 'new',
+    name: "Kertas HVS SIDU Sinar Dunia A4 Ketebalan 70 Gsm 1 RIM 500 Lembar Paper New", // nama produk
+    price: 59000, // harga, ubah saja, tidak usah pakai rp
+    brand: "SIDU", // nama brand
+    category: "Buku", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "Sejak tahun 2011, FixPrint hadir sebagai Total Print Solution yang dipercaya pelanggan di seluruh Indonesia untuk memenuhi berbagai kebutuhan printing. Hingga hari ini, kami telah menyelesaikan lebih dari 2,5 juta pesanan, sebuah pencapaian yang mencerminkan komitmen kami dalam menghadirkan produk berkualitas, pelayanan terbaik, dan pengalaman belanja yang aman serta terpercaya.", // deskripsi produk
+    images: [
+      "https://down-id.img.susercontent.com/file/id-11134207-81ztg-mrvbkeaj85c8c8.webp",
+      "https://down-id.img.susercontent.com/file/id-11134253-81ztk-mri4p3hyk2ksfc.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
+    specifications: {
+      "Ukuran Kertas": "A4",
+      "Jumlah Lembar": "500",
+      "Produk Custom": "Tidak",
+      "Berat Kertas": "70gsm"
+    }, // spesifikasi produk (contoh: "buatan": "Indonesia",)
+    link: "https://shopee.co.id/FixPrint-Kertas-HVS-SIDU-Sinar-Dunia-A4-Ketebalan-70-Gsm-1-RIM-500-Lembar-Paper-New-i.362096994.22284290222?extraParams=%7B%22display_model_id%22%3A187121523185%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
   },
   {
-    id: 21,
-    name: "Wireless Charging Pad Dual Station",
-    price: 49.99,
-    brand: "Anker",
-    category: "Electronics",
-    description: "Simultaneously charge your smartphone and earbuds with high-efficiency 15W MagSafe alignment.",
-    images: ["https://images.unsplash.com/photo-1622445268465-843d304910cf?w=800&auto=format&fit=crop&q=80"],
-    sizes: ["Standard"], colors: ["#0F172A"],
-    specifications: { "Total Output": "25W Max", "Safety": "Overcharge Protection" },
-    link: ""
+    id: 59,
+    name: "My Book Yuvi Buku Tulis Royal Campus New Series Ukuran Kuarto | 38 Lembar - 10 Buku", // nama produk
+    price: 31000, // harga, ubah saja, tidak usah pakai rp
+    brand: "Mybook", // nama brand
+    category: "Buku", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "Buku tulis ukuran Quarto (16 × 20,8 cm) ini menggunakan kertas Paper One 60 GSM yang berkualitas, dengan ketebalan yang tidak mudah menembus sehingga aman digunakan untuk bolpoin maupun spidol. Setiap pak berisi 10 buku dengan total berat sekitar 900 gram, dilengkapi variasi cover elegan yang menambah kesan rapi dan menarik. Sangat cocok untuk kebutuhan sekolah, buku ini menawarkan kombinasi praktis antara kualitas kertas yang baik, ukuran yang pas, dan tampilan yang stylish.", // deskripsi produk
+    images: [
+    	"https://down-id.img.susercontent.com/file/id-11134207-7rbk5-m7j4ydabyacs0f.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7rbka-m7j4ydabu2ng06.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7rbk8-m7j4ydabvh7we6.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7rbk1-m7j4ydabwvscfe.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
+    specifications: {
+      "Ukuran Kertas": "A5",
+      "Jenis Buku Catatan/Notepad": "Subject Book",
+      "Tekstur Kertas": "Halus",
+      "Jumlah Lembar": "38"
+    }, // spesifikasi produk (contoh: "buatan": "Indonesia",)
+    link: "https://shopee.co.id/My-Book-Yuvi-Buku-Tulis-Royal-Campus-New-Series-Ukuran-Kuarto-38-Lembar-10-Buku-i.1316277655.26130150243?extraParams=%7B%22display_model_id%22%3A257934063753%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
   },
   {
-    id: 22,
-    name: "Stainless Steel Insulated Travel Tumbler 32oz",
-    price: 35.00,
-    brand: "HydroFlask",
-    category: "Accessories",
-    description: "Double-wall vacuum insulation keeps cold beverages ice cold for 24 hours or piping hot for 12 hours.",
-    images: ["https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=800&auto=format&fit=crop&q=80"],
-    sizes: ["32 oz", "40 oz"], colors: ["#2563EB", "#10B981", "#EF4444"],
-    specifications: { "Insulation": "TempShield Vacuum", "BPA Free": "Yes" },
-    link: ""
+    id: 60,
+    name: "Pangeran Cilik (The Little Prince) (Antoine de Saint-Exupéry)", // nama produk
+    price: 63200, // harga, ubah saja, tidak usah pakai rp
+    brand: "Gramedia", // nama brand
+    category: "Buku", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "Pangeran Cilik termasuk buku yang paling banyak diterjemahkan di dunia. Konon, hingga tahun 2024, kisah ini sudah disadur ke dalam 600 bahasa dan dialek. Buku ini memang luar biasa—tampak seperti cerita anak-anak, tapi sebenarnya dinikmati dan direnungkan oleh orang dewasa. Lewat cerita seorang anak yang mengamati dunia dengan mata naif dan lugu, Saint-Exupéry menyentuh beberapa nilai dan pengalaman manusia yang paling dasar, seperti kekuasaan, tanggung jawab, dan cinta. Dongeng yang mengharukan sekaligus amat mendalam ini termasuk karya-karya agung sastra dunia yang tidak terlupakan.", // deskripsi produk
+    images: [
+		"https://down-id.img.susercontent.com/file/sg-11134201-824hx-medpwey2xvk27e.webp",
+		"https://down-id.img.susercontent.com/file/sg-11134201-824ik-medpwfziobus69.webp",
+		"https://down-id.img.susercontent.com/file/sg-11134201-824gd-medpwgqn435w79.webp",
+		"https://down-id.img.susercontent.com/file/sg-11134201-824gh-medpwhjnzkzl1f.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
+    link: "https://shopee.co.id/Pangeran-Cilik-(The-Little-Prince)-(Antoine-de-Saint-Exup%C3%A9ry)-i.63842097.40967980424?extraParams=%7B%22display_model_id%22%3A276479848780%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
   },
   {
-    id: 23,
-    name: "Cashmere Knit Crewneck Sweater",
-    price: 160.00,
-    brand: "Uniqlo Luxe",
-    category: "Fashion",
-    description: "Ultra-soft 100% Mongolian cashmere sweater offering exceptional warmth with lightweight comfort.",
-    images: ["https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=800&auto=format&fit=crop&q=80"],
-    sizes: ["S", "M", "L"], colors: ["#94A3B8", "#FEF3C7"],
-    specifications: { "Material": "100% Mongolian Cashmere", "Care": "Dry Clean Only" },
-    link: ""
+    id: 61,
+	badge: 'hot',
+    name: "Buku Mindset (Carol S. Dweck, Ph.D.)", // nama produk
+    price: 111000, // harga, ubah saja, tidak usah pakai rp
+    brand: "Gramedia", // nama brand
+    category: "Buku", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "Buku *Mindset* telah terbukti mengubah cara banyak orang di seluruh dunia memandang kesuksesan dan potensi diri, bertengger sebagai topseller di Amazon.com selama lebih dari 13 tahun. Berbeda dari buku kesuksesan pada umumnya yang cenderung menawarkan tips praktis, buku ini mengajak pembaca menyelami akar masalah kesuksesan: pola pikir. Melalui paparan yang mendasar namun langka, buku ini mengontraskan tokoh-tokoh dunia di bidang musik, sastra, sains, olahraga, dan bisnis yang memiliki *fixed mindset* (pola pikir tetap) dengan mereka yang memiliki *growth mindset* (pola pikir tumbuh). Hasilnya, tokoh dengan *growth mindset* terbukti lebih mampu mempertahankan kesuksesan dan kebahagiaan hidup karena lebih menekankan proses belajar serta usaha daripada sekadar mengandalkan bakat dan kecerdasan bawaan.", // deskripsi produk
+    images: [
+		"https://down-id.img.susercontent.com/file/id-11134207-7r990-lu4rc2ouq6s24d@resize_w900_nl.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
+    specifications: {
+      "Bahasa": "Indonesia",
+      "Jenis Cover": "Soft Cover",
+      "ISBN": "9786026486356",
+      "Tahun": "2022"
+    }, // spesifikasi produk (contoh: "buatan": "Indonesia",)
+    link: "https://shopee.co.id/Gramedia-MKG-Buku-Mindset-(Carol-S.-Dweck-Ph.d.)-i.429068669.25924159941?extraParams=%7B%22display_model_id%22%3A49412724895%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
   },
   {
-    id: 24,
-    name: "Acoustic Wooden Ukulele Concert 23 Inch",
-    price: 89.00,
-    brand: "Kala",
-    category: "Accessories",
-    description: "Mahogany top, back, and sides with Aquila Super Nylgut strings and smooth rosewood fingerboard.",
-    images: ["https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=800&auto=format&fit=crop&q=80"],
-    sizes: ["23 Inch"], colors: ["#78350F"],
-    specifications: { "Wood": "Mahogany", "Strings": "Aquila Italian Nylgut" },
-    link: ""
+    id: 62,
+    name: "Drawing Book / buku gambar A4", // nama produk
+    price: 29500, // harga, ubah saja, tidak usah pakai rp
+    brand: "Faber-Castell", // nama brand
+    category: "Buku", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "Bebaskan kreasi dengan buku gambar berukuran A4 yang mudah dibawa-bawa. Cocok untuk para pelajar seni untuk menuangkan ide-ide imajinasi di ruang kelas maupun di luar. Dengan bahan kertas berkualitas dan permukaan halus, memudahkan pengaplikasian crayon, pensil warna maupun marker. Dilengkapi dengan lem yang kuat sehingga kertas gambar tidak mudah terlepas.Tersedia juga dalam ukuran A5, A4, dan A3", // deskripsi produk
+    images: [
+		"https://down-id.img.susercontent.com/file/92dbc00f4a7f4371845707390307252a.webp",
+		"https://down-id.img.susercontent.com/file/5c8829cc28fea0fec4169730c9e838c3.webp",
+		"https://down-id.img.susercontent.com/file/a84420baf434583e2734a7c5705ea73e.webp",
+		"https://down-id.img.susercontent.com/file/28738dcc44ab84479a72cf8bef388231.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 6-5 foto)
+    link: "https://shopee.co.id/Faber-Castell-Drawing-Book-buku-gambar-A4-i.42170420.3827855314?extraParams=%7B%22display_model_id%22%3A40675490618%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
   },
   {
-    id: 25,
-    name: "Smart Security Outdoor Camera 2K Solar",
-    price: 129.99,
-    brand: "Ring",
-    category: "Smart Home",
-    description: "Wire-free 2K camera with integrated solar panel, color night vision, motion alert, and 2-way audio.",
-    images: ["https://images.unsplash.com/photo-1557324232-b8917d3c3dcb?w=800&auto=format&fit=crop&q=80"],
-    sizes: ["Standard"], colors: ["#FFFFFF", "#0F172A"],
-    specifications: { "Resolution": "2K HD", "Power": "Solar + Battery Backup" },
-    link: ""
+    id: 63,
+	badge: 'sale',
+    name: "Pianika Set Alat Tiup Musik 42.2x10.3x5 Cm Keyboard Music Note Timbul TPB", // nama produk
+    price: 144000, // harga, ubah saja, tidak usah pakai rp
+    brand: "MONTANA", // nama brand
+    category: "Aksesoris", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "Pianika Montana TPB berwarna biru dengan ukuran 42,2 × 10,3 × 5 cm ini dirancang agar mudah ditiup, cocok untuk pemula maupun siswa yang belajar musik. Dilengkapi tombol pembersih khusus yang memungkinkan kamu menekan tombol sambil meniup untuk mengeluarkan kotoran dari dalam pianika, sehingga instrumen tetap bersih dan awet. Paket penjualan sudah lengkap dengan selang tiup, alat bantu tiup pendek, dan tas pelindung, menjadikannya pilihan praktis untuk kebutuhan sekolah, latihan, maupun pertunjukan.", // deskripsi produk
+    images: [
+		"https://down-id.img.susercontent.com/file/id-11134207-822wi-motdrxp8a13680.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-822wo-motdrxp877ya45.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-822ws-motdrxp88miqd2.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-822wj-motdrxp8bfnmc6.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-822wu-motdrxp8e8sia1.webp",
+	    "https://down-id.img.susercontent.com/file/id-11134207-822wt-motdrxp8cu820d.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
+    colors: ["blue", "pink"], // warna produk kalau ada (pakai bahasa inggris, contoh: red, blue, green)
+    specifications: {
+      "Berat Produk": "500g",
+      "Alat Musik Tradisional": "Tidak",
+      "Jenis Aksesoris": "Kotak Pembawa"
+    }, // spesifikasi produk (contoh: "buatan": "Indonesia",)
+    link: "https://shopee.co.id/MONTANA-Pianika-Set-Alat-Tiup-Musik-42.2x10.3x5-Cm-Keyboard-Music-Note-Timbul-TPB-i.115654595.3218834390?extraParams=%7B%22display_model_id%22%3A198040650770%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
   },
   {
-    id: 26,
-    name: "Non-Stick Cast Iron Dutch Oven Pot 6 Qt",
-    price: 99.00,
-    brand: "Lodge",
-    category: "Home & Kitchen",
-    description: "Enameled cast iron delivers flawless heat distribution and heat retention for braising, baking, and stewing.",
-    images: ["https://images.unsplash.com/photo-1584992236310-6edddc08acff?w=800&auto=format&fit=crop&q=80"],
-    sizes: ["6 Quart"], colors: ["#EF4444", "#2563EB"],
-    specifications: { "Material": "Enameled Cast Iron", "Oven Safe": "Up to 500°F" },
-    link: ""
+    id: 64,
+    name: "Buku STOIKISME: Mindset, Logika, dan Etika Filsafat yang Bikin Hidup Lebih Ringan | Ali Adhim", // nama produk
+    price: 74700, // harga, ubah saja, tidak usah pakai rp
+    brand: "Dawuh Guru", // nama brand
+    category: "Buku", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "Di tengah dunia yang penuh ketidakpastian dan tantangan, buku ini menghadirkan Stoikisme sebagai panduan praktis untuk menjalani hidup dengan lebih tenang dan terfokus. Mengupas tuntas prinsip dasar Stoikisme yang mencakup mindset, logika, dan etika, buku ini menunjukkan bagaimana penerapannya dapat mengubah cara pandang kita terhadap kehidupan sehari-hari. Dengan pendekatan yang mudah dipahami, pembaca diajak menyelami pemikiran klasik dari tokoh-tokoh besar seperti Seneca, Epictetus, dan Marcus Aurelius, sekaligus belajar mengembangkan ketahanan mental, menanggapi situasi sulit dengan bijaksana, serta mengelola emosi agar tetap menjaga kejernihan batin.", // deskripsi produk
+    images: [
+		"https://down-id.img.susercontent.com/file/id-11134207-7ra0h-mbvcwq6q32yuf4.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-81ztq-mfdqxw7t9wy225.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-81ztg-mff98ezm5fkd6e.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
+    specifications: {
+      "Jenis Edisi": "Edisi Reguler",
+      "Bahasa": "Indonesia",
+      "Jenis Cover": "Soft Cover",
+      "Perusahaan Penerbit": "PT Dawuh Guru",
+      "Tahun": "2024"
+    }, // spesifikasi produk (contoh: "buatan": "Indonesia",)
+    link: "https://shopee.co.id/Dawuh-Guru-Buku-STOIKISME-Mindset-Logika-dan-Etika-Filsafat-yang-Bikin-Hidup-Lebih-Ringan-Ali-Adhim-i.285456677.27114642172?extraParams=%7B%22display_model_id%22%3A246821543728%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
   },
   {
-    id: 27,
-    name: "Bluetooth Karaoke Wireless Microphone",
-    price: 39.99,
-    brand: "SingPro",
-    category: "Electronics",
-    description: "Handheld wireless mic with built-in stereo speaker, voice reverb controls, and LED light show.",
-    images: ["https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=800&auto=format&fit=crop&q=80"],
-    sizes: ["Standard"], colors: ["#F59E0B", "#EF4444"],
-    specifications: { "Battery": "2000mAh", "Connectivity": "Bluetooth 5.0" },
-    link: ""
+    id: 65,
+    name: "Sepatu Kodachi 8116 Grey Double Black Abu-Abu Sneakers Unisex Olahraga", // nama produk
+    price: 130000, // harga, ubah saja, tidak usah pakai rp
+    brand: "Kodachi", // nama brand
+    category: "Sepatu", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "Sepatu Kodachi, yang lebih dikenal dengan sebutan sepatu Capung, dirancang serbaguna untuk berbagai cabang olahraga seperti badminton, voli, takraw, hingga parkour. Dilengkapi sol full karet yang anti slip, sepatu ini menawarkan kenyamanan maksimal, daya cengkeram kuat, dan fleksibilitas tinggi saat bergerak. Dengan desain yang fashionable, bobot ringan, serta durabilitas tinggi, sepatu ini cocok untuk kamu yang aktif berolahraga maupun beraktivitas sehari-hari dengan gaya tetap kekinian.", // deskripsi produk
+    images: [
+		"https://down-id.img.susercontent.com/file/19f48d0b4d14615cfed4efe8d1f2d62b.webp",
+		"https://down-id.img.susercontent.com/file/d4d6b88db681b695c689e4e3b0e63ad1.webp",
+		"https://down-id.img.susercontent.com/file/59d2fca2bfaf3c6606164ad255cab46d.webp",
+		"https://down-id.img.susercontent.com/file/13fe7a762d81f62b5fb7f904d75a519e.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
+    sizes: ["37", "38", "39", "40", "41", "42", "43", "44", "45"], // ukuran produk kalau ada, bisa kamu tambah sendiri
+    specifications: {
+      "Tipe Pengikat": "Tali",
+      "Asal Produk": "Indonesia",
+      "Tampilan Kulit": "bermotif",
+      "Model Sepatu": "8116"
+    }, // spesifikasi produk (contoh: "buatan": "Indonesia",)
+    link: "https://shopee.co.id/Sepatu-Kodachi-8116-Grey-Double-Black-Abu-Abu-Sneakers-Unisex-Olahraga-i.312908080.10442049375?extraParams=%7B%22display_model_id%22%3A94619686119%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
   },
   {
-    id: 28,
-    name: "High-Density Yoga Mat Non-Slip 6mm",
-    price: 49.50,
-    brand: "Lululemon",
-    category: "Accessories",
-    description: "Eco-friendly TPE material with double-sided anti-skid texture and alignment lines for perfect posture.",
-    images: ["https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=800&auto=format&fit=crop&q=80"],
-    sizes: ["6mm Thick"], colors: ["#10B981", "#2563EB"],
-    specifications: { "Thickness": "6mm", "Material": "Eco-TPE Rubber" },
-    link: ""
+    id: 66,
+    name: "Gio Saverino Sepatu Sekolah Hitam Pakai Tali Joker", // nama produk
+    price: 189100, // harga, ubah saja, tidak usah pakai rp
+    brand: "Gio Saverino", // nama brand
+    category: "Sepatu", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "Sneakers Gio Saverino menghadirkan gaya fashion terkini dengan desain casual yang cocok dipakai untuk aktivitas sehari-hari. Menggunakan bahan hi-tech breathable fabric, sepatu ini menjaga sirkulasi udara tetap optimal sehingga kaki terasa sejuk dan nyaman meski digunakan dalam waktu lama. Sol dan tapak sepatu berbahan injection natural rubber membuatnya sangat ringan, empuk, dan nyaman, baik untuk berjalan santai maupun berolahraga ringan.", // deskripsi produk
+    images: [
+		"https://down-id.img.susercontent.com/file/80c9e0a85bd8fe1aa3a908d15d345630.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7r98s-m09q6eyybw9s5a.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7r98x-m09pp4s36kv468.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7r990-m09q6eyybw4c05.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7r98q-m09pp4s37zfkcd.webp",
+	    "https://down-id.img.susercontent.com/file/222617ebc619f71b5efb82bea55ca29c.webp",
+	    "https://down-id.img.susercontent.com/file/sg-11134201-823p0-mp6batafjhu790.webp",
+	    "https://down-id.img.susercontent.com/file/17322858cf8bced253401484a4a350e7.webp",
+	    "https://down-id.img.susercontent.com/file/8c2374de874a8e50607400ec0f791fe1.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
+    sizes: ["39", "40", "41", "42", "43", "44"], // ukuran produk kalau ada, bisa kamu tambah sendiri
+    colors: ["black", "blue", "beige"], // warna produk kalau ada (pakai bahasa inggris, contoh: red, blue, green)
+    specifications: {
+      "Asal Produk": "Indonesia",
+      "Tipe Pengikat": "Tali"
+    }, // spesifikasi produk (contoh: "buatan": "Indonesia",)
+    link: "https://shopee.co.id/Gio-Saverino-Sepatu-Sekolah-Hitam-Pakai-Tali-Joker-i.172009345.16763751535?extraParams=%7B%22display_model_id%22%3A251609505007%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
   },
   {
-    id: 29,
-    name: "Smart Watch Series Ultra GPS 49mm",
-    price: 699.00,
-    brand: "Apple",
-    category: "Electronics",
-    description: "Aerospace grade titanium case, dual-frequency precision GPS, 100m water resistance, and action button.",
-    images: ["https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=800&auto=format&fit=crop&q=80"],
-    sizes: ["49mm Titanium"], colors: ["#F8FAFC", "#0F172A"],
-    specifications: { "Case": "Titanium", "Water Resistance": "100 Meters", "Battery": "36 Hours" },
-    link: ""
+    id: 67,
+    name: "ONE PIECE X KIKY Buku Tulis BOXY 50 One Piece 1 Pack isi 10 - 1 Pcs", // nama produk
+    price: 9400, // harga, ubah saja, tidak usah pakai rp
+    brand: "KIKY", // nama brand
+    category: "Buku", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "Buku tulis Kiky BX 50 edisi spesial One Piece menampilkan desain cover poster “WANTED” yang menampilkan karakter populer dari Straw Hat Crew, menjadikannya pilihan menarik bagi pelajar, mahasiswa, maupun kolektor anime. Dengan kualitas kertas yang baik dan ukuran yang praktis, buku ini cocok untuk mencatat, mengerjakan tugas, atau sekadar mengoleksi merchandise One Piece favoritmu.", // deskripsi produk
+    images: [
+		"https://down-id.img.susercontent.com/file/id-11134207-8224p-mhzspg617gg5cc.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-8224t-mhzspg5w4um9d3.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-8224z-mhzspg5wda0x51.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
+    link: "https://shopee.co.id/ONE-PIECE-X-KIKY-Buku-Tulis-BOXY-50-One-Piece-1-Pack-isi-10-1-Pcs-i.89747975.51302743160?extraParams=%7B%22display_model_id%22%3A345455370868%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
   },
   {
-    id: 30,
-    name: "Classic Suede Leather Chelsea Boots",
-    price: 165.00,
-    brand: "Clarks",
-    category: "Footwear",
-    description: "Hand-finished premium suede leather with elastic side goring and comfortable crepe rubber soles.",
-    images: ["https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=800&auto=format&fit=crop&q=80"],
-    sizes: ["US 9", "US 10", "US 11"], colors: ["#78350F", "#1E293B"],
-    specifications: { "Upper": "Genuine Suede", "Sole": "Crepe Rubber" },
-    link: ""
+    id: 68,
+    name: "Tas Sekolah Anak Dan Dewasa Demon Slayer Casual Kasual Ransel Kantong Ori Original Produk Lokal Tas Anti Air CUT 024", // nama produk
+    price: 146000, // harga, ubah saja, tidak usah pakai rp
+    brand: "Capilari", // nama brand
+    category: "Tas", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "Tas ransel ini dibuat dari bahan Bimo berkualitas tinggi yang dikenal kuat, tebal, dan tahan lama, sehingga siap menemani aktivitas sekolah, kuliah, maupun harianmu. Dilengkapi desain animasi keren dengan warna tajam dan detail menarik, tas ini tidak hanya fungsional, tetapi juga menambah kesan trendi dan modern pada gaya sehari-harimu.", // deskripsi produk
+    images: [
+		"https://down-id.img.susercontent.com/file/id-11134207-8224r-mijxc4io07wi18.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-82250-mijxc4io1mgye6.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-82251-mijxc4io311eab.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-8224t-mijxqhgwl79gf2.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-8224t-mijxqhhdd7goc2.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
+    specifications: {
+      "Asal Produk": "Indonesia",
+      "Bahan": "DTF",
+      "Jenis Kulit": "kulit pu"
+    }, // spesifikasi produk (contoh: "buatan": "Indonesia",)
+    link: "https://shopee.co.id/Capilari-Tas-Sekolah-Anak-Dan-Dewasa-Demon-Slayer-Casual-Kasual-Ransel-Kantong-Ori-Original-Produk-Lokal-Tas-Anti-Air-CUT-024-i.225158355.41877408849?extraParams=%7B%22display_model_id%22%3A410331355416%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
   },
   {
-    id: 31,
-    name: "Foldable Drone 4K Camera 3-Axis Gimbal",
-    price: 549.00,
-    brand: "DJI",
-    category: "Electronics",
-    description: "Ultra-compact drone with 4K video recording, 31-min flight time, OcuSync 10km video transmission range.",
-    images: ["https://images.unsplash.com/photo-1527977966376-1c8408f9f108?w=800&auto=format&fit=crop&q=80"],
-    sizes: ["Standard", "Fly More Combo"], colors: ["#94A3B8"],
-    specifications: { "Camera": "4K HDR 30fps", "Flight Time": "31 Mins", "Weight": "249g" },
-    link: ""
+    id: 69,
+    name: "Tas Ransel Pria Kapasitas Besar Tahan Air Desain Simpel Tas kuliah Ransel Pria Pelajaran", // nama produk
+    price: 244000, // harga, ubah saja, tidak usah pakai rp
+    brand: "GAEHT", // nama brand
+    category: "Tas", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "Tas ransel ini terbuat dari kombinasi bahan nilon dan poliester yang tahan air serta tahan aus, dengan dimensi 48 × 32 × 22 cm dan kapasitas 25 liter yang cukup untuk membawa laptop hingga 15,6 inci. Dilengkapi penutup ritsleting yang aman dan benang jahit yang kuat, tas ini menawarkan ketahanan tinggi untuk penggunaan sehari-hari, baik untuk sekolah, kerja, maupun aktivitas luar ruangan.", // deskripsi produk
+    images: [
+		"https://down-id.img.susercontent.com/file/id-11134207-81ztf-me82jfxupr7qa2.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7ra0m-mdo2gmjkfa8e2a.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7ra0r-mdo2gmjkgosucc.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7ra0j-mdo2gmjkb2j2a4.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7ra0l-mdo2gmjkdvnye5.webp",
+	    "https://down-id.img.susercontent.com/file/id-11134207-7ra0p-mdo2gmjkch3i9b.webp",
+	    "https://down-id.img.susercontent.com/file/id-11134207-7ra0o-mdo32xwsiqhb14.webp",
+	    "https://down-id.img.susercontent.com/file/id-11134207-7ra0i-mdo2gmjkjhxq6c.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
+    colors: ["grey", "black", "pink"], // warna produk kalau ada (pakai bahasa inggris, contoh: red, blue, green)
+    specifications: {
+      "Fitur": "Slot Laptop, Lainnya, Slot Tablet",
+      "Asal Produk": "Negara Lain",
+      "Bahan": "Nilon+Poliester"
+    }, // spesifikasi produk (contoh: "buatan": "Indonesia",)
+    link: "https://shopee.co.id/GAEHT-Tas-Ransel-Pria-Kapasitas-Besar-Tahan-Air-Desain-Simpel-Tas-kuliah-Ransel-Pria-Pelajaran-i.1602690410.43714267421?extraParams=%7B%22display_model_id%22%3A169052605804%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
   },
   {
-    id: 32,
-    name: "Stainless Steel Knife Set with Wooden Block (15 Pcs)",
-    price: 119.00,
-    brand: "Henckels",
-    category: "Home & Kitchen",
-    description: "High-carbon German stainless steel blades precision-honed for razor sharpness and long-lasting edge retention.",
-    images: ["https://images.unsplash.com/photo-1593618998160-e34014e67546?w=800&auto=format&fit=crop&q=80"],
-    sizes: ["15 Piece Set"], colors: ["#78350F"],
-    specifications: { "Steel": "German Stainless High Carbon", "Block": "Natural Hardwood" },
-    link: ""
+    id: 70,
+	badge: 'hot',
+    name: "Novel Tentang Kamu", // nama produk
+    price: 74000, // harga, ubah saja, tidak usah pakai rp
+    brand: "Tere Liye", // nama brand
+    category: "Buku", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "Buku *Tentang Kamu* karya Tere Liye merupakan salah satu buku paling mahal dan paling laris setelah *Janji*, dengan harga cover di toko Gramedia mencapai Rp114.000. Dirilis bertepatan dengan semangat bulan Ramadhan, buku ini ditawarkan dengan harga super diskon agar lebih banyak pembaca bisa menikmati cerita 100% original dari Tere Liye. Meskipun dijual dengan harga khusus, kualitas dan keaslian buku tetap terjamin, sehingga kamu bisa membaca dengan tenang tanpa perlu khawatir.", // deskripsi produk
+    images: [
+		"https://down-id.img.susercontent.com/file/id-11134207-8224x-mkypomkzumf7f3.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-8224z-mkypomkzw0zn5d.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
+    specifications: {
+      "Jenis Edisi": "Edisi Reguler",
+      "Bahasa": "Indonesia",
+      "Jenis Cover": "Soft Cover",
+      "Perusahaan Penerbit": "sabakgrip"
+    }, // spesifikasi produk (contoh: "buatan": "Indonesia",)
+    link: "https://shopee.co.id/Tere-Liye-Super-Sale-Novel-Tentang-Kamu-Rp-74.000-i.216513587.44428818094?extraParams=%7B%22display_model_id%22%3A385570319822%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
   },
   {
-    id: 33,
-    name: "Retro Vinyl Record Player Turntable",
-    price: 139.99,
-    brand: "Crosley",
-    category: "Electronics",
-    description: "3-speed belt-driven turntable housed in a vintage suitcase design with built-in stereo speakers and Bluetooth receiver.",
-    images: ["https://images.unsplash.com/photo-1539185441755-769473a23570?w=800&auto=format&fit=crop&q=80"],
-    sizes: ["Standard"], colors: ["#EF4444", "#0F172A"],
-    specifications: { "Speeds": "33 1/3, 45, 78 RPM", "Outputs": "RCA & Headphone Jack" },
-    link: ""
+    id: 71,
+    name: "Aquarius Backpack - Black", // nama produk
+    price: 2765000, // harga, ubah saja, tidak usah pakai rp
+    brand: "Samsonite", // nama brand
+    category: "Tas", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "Tas ransel Aquarius dirancang khusus untuk pebisnis yang sering bepergian, dengan tampilan bersih dan elegan serta bentuk terstruktur yang memudahkan pengaturan barang kapan saja dan di mana saja. Dilengkapi dua saku depan yang mencakup gantungan kunci, saku dalam, dan tempat pena, serta saku belakang berzip untuk menyimpan barang berharga, tas ini menawarkan organisasi yang praktis. Saku samping berzip, bukaan lebar pada kompartemen utama, pita silang, saku jaring dalam, kompartemen laptop hingga 14,1 inci, dan fitur Smart Sleeve semakin melengkapi fungsionalitasnya. Terbuat dari bahan nilon dengan aksen kulit, tas ini berukuran 38 × 28 × 15 cm, berkapasitas 17 liter, dan memiliki berat ringan hanya 0,8 kg.", // deskripsi produk
+    images: [
+		"https://down-id.img.susercontent.com/file/id-11134207-822wo-mnwevza3cbghd9.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7ras8-m1mpff8tjm1o6f.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7ras9-m3vllgs5t1b05c.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7ras9-m1mpff8tmf6k20.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7rasc-m1mpff8tl0m436.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
+    specifications: {
+      "Asal Produk": "Indonesia",
+      "Bahan": "Nylon - Leather Trim"
+    }, // spesifikasi produk (contoh: "buatan": "Indonesia",)
+    link: "https://shopee.co.id/Samsonite-Aquarius-Backpack-Black-i.492650266.28814760942?extraParams=%7B%22display_model_id%22%3A187898618120%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
   },
   {
-    id: 34,
-    name: "Waterproof Bluetooth Portable Speaker IPX7",
-    price: 89.95,
-    brand: "JBL",
-    category: "Electronics",
-    description: "Bold sound with punchy bass, fully waterproof IPX7 construction for pool parties and outdoor camping.",
-    images: ["https://images.unsplash.com/photo-1545454675-3531b543be5d?w=800&auto=format&fit=crop&q=80"],
-    sizes: ["Compact"], colors: ["#2563EB", "#EF4444", "#0F172A"],
-    specifications: { "Waterproof": "IPX7", "Playtime": "12 Hours" },
-    link: ""
+    id: 72,
+    name: "Men Novablast 6 Wide-1011C242.002", // nama produk
+    price: 2299000, // harga, ubah saja, tidak usah pakai rp
+    brand: "ASICS", // nama brand
+    category: "Sepatu", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "Sepatu NOVABLAST™ 6 dirancang untuk memberikan pengembalian energi supreme saat toe-off dan traksi yang lebih baik di bawah kaki, menjadikannya pilihan ideal untuk latihan intensif. Busa FF BLAST™ MAX yang dipadukan dengan pod trampolin FF TURBO™ SQUARED di bagian forefoot menciptakan pendaratan yang lebih lembut dan pantulan yang lebih berenergi setiap kali melangkah. Outsole-nya diperbarui dengan karet ASICSGRIP™ di forefoot untuk traksi maksimal, sementara upper rajutan rekayasa menawarkan bobot ringan dan breathability tinggi. Dilengkapi konstruksi tongue wing untuk fit yang nyaman dan aman di midfoot, karet AHAR™ LO untuk grip andal, serta desain wide fit yang memberi ruang lebih bagi kaki, sepatu ini menggabungkan kenyamanan, responsivitas, dan daya cengkeram canggih di berbagai medan.", // deskripsi produk
+    images: [
+		"https://down-id.img.susercontent.com/file/id-11134207-822wu-mpvz27jyyfbh7d.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-822wm-mpvz27jxqvpe5c.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-822wq-mpvz27jyhki661.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-822wj-mpvz27k21e6j7e.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-822wi-mpvz27jyst1p8d.webp",
+	    "https://down-id.img.susercontent.com/file/id-11134207-822wr-mpvz27jyu7m5bf.webp",
+	    "https://down-id.img.susercontent.com/file/id-11134207-822wr-mpvz27jyx0r12c.webp",
+	    "https://down-id.img.susercontent.com/file/id-11134207-822wg-mpvz27jyvm6l53.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
+    sizes: [ "US 6" , "US 6.5" , "US 7" , "US 7.5" , "US 8" , "US 8.5" , "US 9" , "US 9.5" , "US 10" , "US 10.5" , "US 11" , "US 11.5" , "US 12" ], // ukuran produk kalau ada, bisa kamu tambah sendiri
+    specifications: {
+      "Tipe Pengikat": "Tali",
+      "Asal Produk": "Indonesia",
+      "Bahan": "Lainnya, Mesh"
+    }, // spesifikasi produk (contoh: "buatan": "Indonesia",)
+    link: "https://shopee.co.id/Asics-Men-Novablast-6-Wide-1011C242.002-i.472404366.52459999084?extraParams=%7B%22display_model_id%22%3A307595303361%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
   },
   {
-    id: 35,
-    name: "Unisex Oversized Streetwear Hoodie",
-    price: 75.00,
-    brand: "Essential",
-    category: "Fashion",
-    description: "Heavyweight 450GSM French Terry cotton hoodie with dropped shoulders and subtle embossed tonal logo.",
-    images: ["https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=800&auto=format&fit=crop&q=80"],
-    sizes: ["S", "M", "L", "XL"], colors: ["#64748B", "#0F172A"],
-    specifications: { "Fabric": "450GSM French Terry", "Fit": "Relaxed Oversized" },
-    link: ""
+    id: 73,
+    name: "Travel Kit Organizer - Tempat Pensil dan Charger - Nata", // nama produk
+    price: 88400, // harga, ubah saja, tidak usah pakai rp
+    brand: "Montrav", // nama brand
+    category: "Aksesoris", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "Nata Stationery Pack adalah pouch khusus yang dirancang untuk menyimpan koleksi alat tulis dan peralatan kerja seperti pulpen, pensil, spidol, charger, hingga kabel USB, sekaligus menjadi bagian dari seri Nata Packing Organizer yang membantu kamu mengatur barang sesuai kebutuhan. Dilengkapi karet elastis tebal pada kompartemen utama, pouch ini memungkinkan barang bawaan dikategorikan dengan rapi, sementara dua ruang penyimpanan yang tersedia memastikan kapasitas muat yang lebih banyak. Webbing yang terpasang berfungsi sebagai pegangan praktis, sehingga kamu bisa menenteng pouch ini dengan mudah saat bepergian atau beraktivitas.", // deskripsi produk
+    images: [
+		"https://down-id.img.susercontent.com/file/id-11134207-7r98o-lkqgmo8jgrnna4.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7qul7-ligshz9jqhka1b.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7qul3-ligshz9jrw4q02.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7qul3-ligshz9jtap629.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7qukx-ligshz9jp2zu29.webp",
+	    "https://down-id.img.susercontent.com/file/id-11134207-7qukz-ligshz9tg8yyb4.webp",
+	    "https://down-id.img.susercontent.com/file/id-11134207-7qul8-ligshzc1eety5f.webp",
+	    "https://down-id.img.susercontent.com/file/id-11134207-7qul3-ligshzc1ftee3c.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
+    colors: ["grey", "black", "navy", "green"], // warna produk kalau ada (pakai bahasa inggris, contoh: red, blue, green)
+    specifications: {
+      "Asal Produk": "Indonesia",
+      "Bahan": "Nilon, Poliester"
+    }, // spesifikasi produk (contoh: "buatan": "Indonesia",)
+    link: "https://shopee.co.id/Montrav-Travel-Kit-Organizer-Tempat-Pensil-dan-Charger-Nata-i.14281857.23837586274?extraParams=%7B%22display_model_id%22%3A194178856936%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
   },
   {
-    id: 36,
-    name: "Precision Electric Coffee Grinder Burr",
-    price: 85.00,
-    brand: "Baratza",
-    category: "Home & Kitchen",
-    description: "40 mm conical steel burrs with 40 individual grind adjustment settings for Espresso to French Press.",
-    images: ["https://images.unsplash.com/photo-1589396575653-c09c794ff6a6?w=800&auto=format&fit=crop&q=80"],
-    sizes: ["Standard"], colors: ["#0F172A"],
-    specifications: { "Burr Type": "Conical Steel", "Grind Settings": "40" },
-    link: ""
+    id: 74,
+    name: "Memo Stick / Sticky Note / Kertas Memo / Memo Tempel Joyko MMS-0654C", // nama produk
+    price: 7600, // harga, ubah saja, tidak usah pakai rp
+    brand: "JOYKO", // nama brand
+    category: "Aksesoris", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "Memo Stick Joyko MMS-0654C berukuran 75 × 75 mm (3 inch) ini tersedia dalam empat pilihan warna cerah—pink, orange, yellow, dan green—yang memudahkan kamu menandai catatan penting, membuat pengingat, atau menghias halaman buku. Terbuat dari bahan kertas berkualitas dengan isi 100 lembar per warna, memo ini mudah merekat dan mudah dilepas kembali tanpa meninggalkan residu. Harga yang tercantum adalah per warna, sehingga kamu bisa memilih sesuai kebutuhan atau mengumpulkan berbagai warna untuk keperluan yang lebih variatif.", // deskripsi produk
+    images: [
+		"https://down-id.img.susercontent.com/file/id-11134207-7rbk5-m7gduu7shm9y72.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7rbk1-m7ge13bf4c7q77.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7rbk5-m7gduu7skfeu91.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7rbkb-m7gduu7sltza99.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7rbk3-m7gduu7sn8jqe5.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
+    colors: ["green", "orange", "pink", "yellow"], // warna produk kalau ada (pakai bahasa inggris, contoh: red, blue, green)
+    link: "https://shopee.co.id/Memo-Stick-Sticky-Note-Kertas-Memo-Memo-Tempel-Joyko-MMS-0654C-i.64925304.1104069331?extraParams=%7B%22display_model_id%22%3A139285499105%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
   },
   {
-    id: 37,
-    name: "Full HD Portable Projector 1080P WiFi",
-    price: 219.00,
-    brand: "Anker Nebula",
-    category: "Electronics",
-    description: "Native 1080p resolution, 500 ANSI Lumens, built-in dual 8W speakers, auto keystone correction and Android OS.",
-    images: ["https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=800&auto=format&fit=crop&q=80"],
-    sizes: ["Compact"], colors: ["#0F172A"],
-    specifications: { "Resolution": "Native 1080p", "Lumens": "500 ANSI", "Screen Size": "Up to 120 Inch" },
-    link: ""
+    id: 75,
+    name: "Spidol Warna Warni 1 Set Sketch Marker 2 Tip Touch Marker 48/60/80 Warna", // nama produk
+    price: 96990, // harga, ubah saja, tidak usah pakai rp
+    brand: "Aimilo", // nama brand
+    category: "Alat Tulis", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "Spidol seni Aimilo ini hadir dalam satu set warna-warni lengkap dengan tas penyimpanan praktis, dirancang khusus untuk kebutuhan menggambar, mewarnai, dan proyek seni lainnya. Dengan ujung ganda yang terdiri dari ujung bulat 1 mm untuk detail halus dan ujung miring 6 mm untuk bidang lebar, spidol ini menawarkan fleksibilitas tinggi dalam menciptakan berbagai efek visual. Menggunakan tinta pigmen berbasis alkohol yang tidak berbau, cepat kering, cerah, dan tahan lama, spidol ini tidak mudah luntur serta aman digunakan karena tidak beracun dan ramah lingkungan.", // deskripsi produk
+    images: [
+		"https://down-id.img.susercontent.com/file/id-11134207-7rask-m0wgmroc42bw53.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7r992-lwtml3s70c1p8c.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7r98u-lwtml3s71qm580.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7r98w-lvoanbomhcx51f.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-7r98o-lvoanbomlkmhaf.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
+    specifications: {
+      "Ketebalan": "6mm",
+      "Bahan": "Plastik + Nilon",
+      "Panjang Spidol": "Sekitar 15.2cm"
+    }, // spesifikasi produk (contoh: "buatan": "Indonesia",)
+    link: "https://shopee.co.id/Aimilo-Spidol-Warna-Warni-1-Set-Sketch-Marker-2-Tip-Touch-Marker-48-60-80-Warna-i.1112780441.24157860810?extraParams=%7B%22display_model_id%22%3A236468295484%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
   },
   {
-    id: 38,
-    name: "Polarized Retro Round Sunglasses",
-    price: 55.00,
-    brand: "Oakley",
-    category: "Accessories",
-    description: "Vintage round frame architecture paired with HD polarized UV protection lenses for stylish sun protection.",
-    images: ["https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=800&auto=format&fit=crop&q=80"],
-    sizes: ["One Size"], colors: ["#78350F", "#0F172A"],
-    specifications: { "Protection": "UV400 Polarized", "Frame": "Acetate" },
-    link: ""
+    id: 76,
+    name: "Pensil Mekanik / Mechanical Pencil MP-52 - Pcs", // nama produk
+    price: 7500, // harga, ubah saja, tidak usah pakai rp
+    brand: "JOYKO", // nama brand
+    category: "Alat Tulis", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "Pensil mekanik JOYKO MP-52 ini memiliki desain ringkas dengan panjang 14,1 cm dan diameter 1 cm, cocok untuk menulis, menggambar, atau mengerjakan tugas sekolah dan kantor. Menggunakan isi pensil 0,5 mm, pensil ini menghasilkan garis yang presisi, rapi, dan konsisten tanpa perlu sering diraut.", // deskripsi produk
+    images: [
+    	"https://down-id.img.susercontent.com/file/sg-11134201-23010-pfadxdqg9wmvbe.webp",
+		"https://down-id.img.susercontent.com/file/sg-11134201-823pl-mp5gmw92ls75c8.webp",
+		"https://down-id.img.susercontent.com/file/sg-11134201-23010-fsk67iqg9wmv53.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
+    specifications: {
+      "Ketebalan": "0.5mm"
+    }, // spesifikasi produk (contoh: "buatan": "Indonesia",)
+    link: "https://shopee.co.id/JOYKO-Pensil-Mekanik-Mechanical-Pencil-MP-52-Pcs-i.39247910.12197914680?extraParams=%7B%22display_model_id%22%3A220475761512%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
   },
   {
-    id: 39,
-    name: "Ergonomic Vertical Wireless Mouse",
-    price: 39.99,
-    brand: "Logitech",
-    category: "Electronics",
-    description: "Scientifically engineered 57-degree vertical posture reduces wrist strain and forearm muscle fatigue.",
-    images: ["https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=800&auto=format&fit=crop&q=80"],
-    sizes: ["Right Handed"], colors: ["#1E293B"],
-    specifications: { "DPI": "4000 Adjustable", "Connectivity": "Bluetooth / Logi Bolt" },
-    link: ""
+    id: 77,
+	badge: 'new',
+    name: "Pensil Sketsa Profesional Set 12pcs 1B-8B Lengkap dengan Kotak Gambar Arsitek & Seniman", // nama produk
+    price: 25900, // harga, ubah saja, tidak usah pakai rp
+    brand: "BALODY", // nama brand
+    category: "Alat Tulis", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "Set pensil sketsa seni profesional ini berisi 12 batang pensil dengan tingkat kekerasan bervariasi dari 2H hingga 8B, memenuhi kebutuhan mulai dari garis halus hingga bayangan pekat untuk sketsa, menggambar, scrapbooking, keperluan sekolah, maupun ujian. Terbuat dari kayu alami yang ramah lingkungan dan sehat, badan pensil ini menawarkan kenyamanan saat digenggam serta kualitas yang terjamin. Dengan ukuran set sekitar 18,8 × 10,3 × 1 cm dan isi warna hitam, paket ini menghadirkan 12 gaya berbeda seperti pada gambar, siap mendukung kreativitas dan kebutuhan menggambar profesionalmu.", // deskripsi produk
+    images: [
+    	"https://down-id.img.susercontent.com/file/id-11134207-8224y-mgw3ckorbu300b.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-8224s-mgw3ckoqic5kd7.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-8224y-mgw3ckorg1sc61.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-8224o-mgw3ckoren7w41.webp",
+		"https://down-id.img.susercontent.com/file/id-11134207-8224x-mgw3ckord8ng2f.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
+    link: "https://shopee.co.id/BALODY-Pensil-Sketsa-Profesional-Set-12pcs-1B-8B-Lengkap-dengan-Kotak-Gambar-Arsitek-Seniman-i.1245591136.51501104781?extraParams=%7B%22display_model_id%22%3A425100688800%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
   },
   {
-    id: 40,
-    name: "Luxury Scented Soy Candle Trio Set",
-    price: 42.00,
-    brand: "Diptyque",
-    category: "Home & Kitchen",
-    description: "Hand-poured 100% natural soy wax candles infused with essential oils of Sandalwood, Fig, and Amber.",
-    images: ["https://images.unsplash.com/photo-1603006905003-be475563bc59?w=800&auto=format&fit=crop&q=80"],
-    sizes: ["Set of 3"], colors: ["#F8FAFC"],
-    specifications: { "Wax": "100% Natural Soy", "Burn Time": "50 Hours Each" },
-    link: ""
-  }
+    id: 78,
+    name: "Buku Tulis Catatan Bergaris Ruled Notebook Joyko NB-718 A5", // nama produk
+    price: 7200, // harga, ubah saja, tidak usah pakai rp
+    brand: "JOYKO", // nama brand
+    category: "Buku", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "Buku tulis catatan bergaris Joyko NB-718 berukuran A5 (21,1 × 14,8 cm) ini hadir dengan 40 lembar kertas 70 gsm yang rapi dan nyaman untuk menulis, mencatat, atau membuat jurnal harian. Sampulnya lentur dengan jahitan kuat yang membuat halaman tidak mudah lepas, serta desain 180° datar yang memudahkan penulisan hingga ke bagian tepi halaman. Tersedia dalam empat pilihan warna yang dikirim sesuai ketersediaan stok, buku ini dijual per pcs dan cocok untuk kebutuhan sekolah, kuliah, maupun kerja.", // deskripsi produk
+    images: [
+		"https://down-id.img.susercontent.com/file/946df75197835074a0f67c8415c88c1c.webp",
+		"https://down-id.img.susercontent.com/file/f301f8bcf5779c5ecbb703dd16a604f9.webp",
+		"https://down-id.img.susercontent.com/file/8525812a5d09fae19dd9f2aaefc7b1be.webp",
+		"https://down-id.img.susercontent.com/file/b573ebbe3b6050a31e14f2d8e0a6ccfb.webp",
+		"https://down-id.img.susercontent.com/file/sg-11134201-823o9-mp7frj7vtm2p3d.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
+    link: "https://shopee.co.id/Buku-Tulis-Catatan-Bergaris-Ruled-Notebook-Joyko-NB-718-A5-i.64925304.20513480455?extraParams=%7B%22display_model_id%22%3A116907658528%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
+  },
+  {
+    id: 79,
+    name: "MONTANA X SiDU Drawing Book B5 Buku Gambar Dodo B5 Retail 1Pcs", // nama produk
+    price: 2900, // harga, ubah saja, tidak usah pakai rp
+    brand: "MONTANA", // nama brand
+    category: "Buku", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "Buku Gambar Dodo B5 ini dirancang khusus untuk pelajar yang aktif menggambar dan mewarnai, dengan kertas lebih tebal yang memberikan kenyamanan ekstra saat menggunakan pensil, spidol, maupun media gambar lainnya. Berukuran 260 × 180 mm dan berat 150 gram, buku ini praktis dibawa dan cukup luas untuk menampung berbagai karya seni. Desain sampul bervariasi dan akan dikirim sesuai stok yang tersedia, menjadikannya pilihan menarik untuk aktivitas kreatif sehari-hari.", // deskripsi produk
+    images: [
+		"https://down-id.img.susercontent.com/file/sg-11134201-8227f-mhfzkz6pzgn83c.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
+    link: "https://shopee.co.id/MONTANA-X-SiDU-Drawing-Book-B5-Buku-Gambar-Dodo-B5-Retail-1Pcs-i.115654595.47251002874?extraParams=%7B%22display_model_id%22%3A355088528539%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
+  },
+  {
+    id: 80,
+    name: "Notebook A5 Blank Maroon", // nama produk
+    price: 165000, // harga, ubah saja, tidak usah pakai rp
+    brand: "Papermark", // nama brand
+    category: "Buku", // Alat Tulis / Tas / Sepatu / Aksesoris (Kapital di awal)
+    description: "Notebook ini berukuran A5 (15 × 21 cm) dengan total 144 halaman, menggunakan kertas book paper 70 gsm yang nyaman untuk menulis, mencatat, atau membuat jurnal harian. Dilengkapi hard cover yang kokoh dan elegan, notebook ini tidak hanya melindungi halaman di dalamnya, tetapi juga memberikan tampilan rapi dan profesional untuk kebutuhan sekolah, kuliah, maupun kerja.", // deskripsi produk
+    images: [
+		"https://down-id.img.susercontent.com/file/1424eea67c375be27c9a8a3824f2d7e2.webp",
+		"https://down-id.img.susercontent.com/file/cc15e2050ca9958055f9e45c794a6f66.webp"
+    ], // foto produk, ambil link tautan fotonya (seadanya, setidaknya 2-5 foto)
+    specifications: {
+      "Ukuran Kertas": "A5",
+      "Jumlah Lembar": "72"
+    }, // spesifikasi produk (contoh: "buatan": "Indonesia",)
+    link: "https://shopee.co.id/Papermark-Notebook-A5-Blank-Maroon-i.68995429.4616111737?extraParams=%7B%22display_model_id%22%3A21295007642%2C%22model_selection_logic%22%3A3%7D" // link produk, produk usahakan tokopedia
+  },
 ];

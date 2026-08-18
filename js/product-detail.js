@@ -26,158 +26,160 @@ const ProductDetail = {
     this.render();
   },
 
-  render() {
-    const p = this.currentProduct;
-    if (!p) return;
+	render() {
+	    const p = this.currentProduct;
+	    if (!p) return;
+	
+	    const mainContainer = document.getElementById('detailProduct');
+	    mainContainer.className = 'container detail-page px-lg-4';
+	
+	    const images = Array.isArray(p.images) ? p.images : [p.images];
+	    const isWishlisted = Wishlist.contains(p.id);
 
-    const mainContainer = document.getElementById('detailProduct');
-    mainContainer.className = 'container detail-page px-lg-4';
+	    mainContainer.innerHTML = `
+	      <nav aria-label="breadcrumb">
+	        <ol class="breadcrumb">
+	          <li class="breadcrumb-item"><a href="../index.html">Beranda</a></li>
+	          <li class="breadcrumb-item"><a href="../search/index.html?q=${encodeURIComponent(p.category)}">${p.category}</a></li>
+	          <li class="breadcrumb-item active" aria-current="page">${p.name.length > 35 ? p.name.slice(0, 35) + '...' : p.name}</li>
+	        </ol>
+	      </nav>
+	
+	      <div class="product-detail-wrapper animate-fade-in-up">
+	        <!-- Gallery -->
+	        <div class="product-gallery">
+	          <div class="product-detail-images">
+	            <div class="main-image-container">
+	              <img id="productMainImage" src="${images[0]}" alt="${p.name}" onerror="this.src='https://i.ibb.co.com/FqYtjpLF/Proyek-Baru-B352-F56.png'">
+	            </div>
+	            ${images.length > 1 ? `
+	            <div class="thumbnails" id="productThumbnails">
+	              ${images.map((img, idx) => `
+	                <div class="thumb-item ${idx === 0 ? 'active' : ''}" onclick="ProductDetail.switchImage('${img}', this)">
+	                  <img src="${img}" alt="Thumbnail ${idx + 1}" onerror="this.src='https://i.ibb.co.com/FqYtjpLF/Proyek-Baru-B352-F56.png'">
+	                </div>
+	              `).join('')}
+	            </div>
+	            ` : ''}
+	          </div>
+	        </div>
 
-    const images = Array.isArray(p.images) ? p.images : [p.images];
-    const isWishlisted = Wishlist.contains(p.id);
+	        <!-- Info -->
+	        <div class="product-info">
+	          <span class="detail-category">${p.category}</span>
+	          <h1 class="detail-title">${p.name}</h1>
+	          <p class="detail-brand">Brand: <strong>${p.brand}</strong></p>
+	          <div class="detail-price">Rp ${p.price.toLocaleString('id-ID')}</div>
+	          <p class="detail-description">${p.description}</p>
+	
+	          ${p.colors && p.colors.length > 0 ? `
+	          <div class="option-group">
+	            <label class="option-label">Pilih Warna:</label>
+	            <div class="color-options" id="colorOptions">
+	              ${p.colors.map((color, idx) => `
+					  <button class="color-option-btn ${this.selectedColor === color ? 'active' : ''}" 
+					          onclick="ProductDetail.selectColor('${color}', this)"
+					          title="Warna ${color}">
+					    <span class="color-swatch" style="background:${color};"></span>
+					    <span class="color-name">${color}</span>
+					  </button>
+					`).join('')}
+	            </div>
+	          </div>
+	          ` : ''}
+	
+	          ${p.sizes && p.sizes.length > 0 ? `
+	          <div class="option-group">
+	            <label class="option-label">Pilih Ukuran:</label>
+	            <div class="size-options" id="sizeOptions">
+	              ${p.sizes.map(size => `
+	                <button class="size-btn ${this.selectedSize === size ? 'active' : ''}" 
+	                        onclick="ProductDetail.selectSize('${size}', this)">${size}</button>
+	              `).join('')}
+	            </div>
+	          </div>
+	          ` : ''}
+	
+	          <div class="option-group">
+	            <label class="option-label">Jumlah:</label>
+	            <div class="quantity-wrapper">
+	              <div class="quantity-control">
+	                <button class="quantity-btn" onclick="ProductDetail.changeQuantity(-1)">−</button>
+	                <input type="number" class="quantity-input" id="quantityInput" value="1" min="1" onchange="ProductDetail.setQuantity(this.value)">
+	                <button class="quantity-btn" onclick="ProductDetail.changeQuantity(1)">+</button>
+	              </div>
+	              <div style="color:var(--text-muted);font-size:0.85rem;">
+	                Stok: <strong style="color:var(--accent);">Tersedia ✓</strong>
+	              </div>
+	            </div>
+	          </div>
+	
+	          <div class="action-buttons">
+	            <button class="btn-wishlist-large ${isWishlisted ? 'active' : ''}" onclick="ProductDetail.toggleWishlist(this)" title="Wishlist">
+	              <svg width="22" height="22" viewBox="0 0 24 24" fill="${isWishlisted ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+	                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+	              </svg>
+	            </button>
+	            <button class="btn-primary-large" onclick="ProductDetail.addToCart()">
+	              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+	                <circle cx="9" cy="21" r="1"></circle>
+	                <circle cx="20" cy="21" r="1"></circle>
+	                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+	              </svg>
+	              Tambah Keranjang
+	            </button>
+	            <button class="btn-secondary-large" onclick="ProductDetail.buyNow()">
+	              Beli Sekarang
+	            </button>
+	          </div>
 
-    mainContainer.innerHTML = `
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../index.html">Beranda</a></li>
-          <li class="breadcrumb-item"><a href="../search/index.html?q=${encodeURIComponent(p.category)}">${p.category}</a></li>
-          <li class="breadcrumb-item active" aria-current="page">${p.name.length > 35 ? p.name.slice(0, 35) + '...' : p.name}</li>
-        </ol>
-      </nav>
-
-      <div class="row animate-fade-in-up">
-        <div class="col-lg-6 mb-5 mb-lg-0">
-          <div class="product-detail-images">
-            <div class="main-image-container">
-              <img id="productMainImage" src="${images[0]}" alt="${p.name}" onerror="this.src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop&q=80'">
-            </div>
-            ${images.length > 1 ? `
-            <div class="thumbnails" id="productThumbnails">
-              ${images.map((img, idx) => `
-                <div class="thumb-item ${idx === 0 ? 'active' : ''}" onclick="ProductDetail.switchImage('${img}', this)">
-                  <img src="${img}" alt="Thumbnail ${idx + 1}" onerror="this.src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=200'">
-                </div>
-              `).join('')}
-            </div>
-            ` : ''}
-          </div>
-        </div>
-
-        <div class="col-lg-6">
-          <div class="product-detail-info">
-            <span class="detail-category">${p.category}</span>
-            <h1 class="detail-title">${p.name}</h1>
-            <p class="detail-brand">Brand: <strong>${p.brand}</strong></p>
-            <div class="detail-price">Rp ${p.price.toLocaleString('id-ID')}</div>
-            <p class="detail-description">${p.description}</p>
-
-            ${p.colors && p.colors.length > 0 ? `
-            <div class="option-group">
-              <label class="option-label">Pilih Warna:</label>
-              <div class="color-options" id="colorOptions">
-                ${p.colors.map((color, idx) => `
-                  <button class="color-btn ${this.selectedColor === color ? 'active' : ''}" 
-                          style="background:${color};" 
-                          onclick="ProductDetail.selectColor('${color}', this)"
-                          title="Warna ${idx + 1}"></button>
-                `).join('')}
-              </div>
-            </div>
-            ` : ''}
-
-            ${p.sizes && p.sizes.length > 0 ? `
-            <div class="option-group">
-              <label class="option-label">Pilih Ukuran:</label>
-              <div class="size-options" id="sizeOptions">
-                ${p.sizes.map(size => `
-                  <button class="size-btn ${this.selectedSize === size ? 'active' : ''}" 
-                          onclick="ProductDetail.selectSize('${size}', this)">${size}</button>
-                `).join('')}
-              </div>
-            </div>
-            ` : ''}
-
-            <div class="option-group">
-              <label class="option-label">Jumlah:</label>
-              <div class="quantity-wrapper">
-                <div class="quantity-control">
-                  <button class="quantity-btn" onclick="ProductDetail.changeQuantity(-1)">−</button>
-                  <input type="number" class="quantity-input" id="quantityInput" value="1" min="1" onchange="ProductDetail.setQuantity(this.value)">
-                  <button class="quantity-btn" onclick="ProductDetail.changeQuantity(1)">+</button>
-                </div>
-                <div style="color:var(--text-muted);font-size:0.85rem;">
-                  Stok: <strong style="color:var(--accent);">Tersedia ✓</strong>
-                </div>
-              </div>
-            </div>
-
-            <div class="action-buttons">
-              <button class="btn-wishlist-large ${isWishlisted ? 'active' : ''}" onclick="ProductDetail.toggleWishlist(this)" title="Wishlist">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="${isWishlisted ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                </svg>
-              </button>
-              <button class="btn-primary-large" onclick="ProductDetail.addToCart()">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="9" cy="21" r="1"></circle>
-                  <circle cx="20" cy="21" r="1"></circle>
-                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                </svg>
-                Tambah Keranjang
-              </button>
-              <button class="btn-secondary-large" onclick="ProductDetail.buyNow()">
-                Beli Sekarang
-              </button>
-            </div>
-
-            ${p.link ? `
-            <a href="${p.link}" target="_blank" class="d-block w-100 text-center text-decoration-none" style="padding:0.75rem;background:#40b86b;color:white;border-radius:var(--radius-sm);font-weight:600;transition:var(--transition);margin-bottom:1rem;" onmouseover="this.style.background='#30a05a'" onmouseout="this.style.background='#40b86b'">
-              💚 Beli di Tokopedia
-            </a>
-            ` : ''}
-
-            <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:0.75rem;margin-top:1.5rem;">
-              <div style="background:var(--bg-light);padding:1rem;border-radius:var(--radius-sm);display:flex;align-items:center;gap:0.75rem;">
-                <div style="width:40px;height:40px;background:rgba(16,185,129,0.15);color:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;">🚚</div>
-                <div>
-                  <div style="font-weight:600;font-size:0.85rem;">Gratis Ongkir</div>
-                  <div style="font-size:0.75rem;color:var(--text-muted);">Min. belanja Rp 500.000</div>
-                </div>
-              </div>
-              <div style="background:var(--bg-light);padding:1rem;border-radius:var(--radius-sm);display:flex;align-items:center;gap:0.75rem;">
-                <div style="width:40px;height:40px;background:rgba(99,102,241,0.15);color:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;">🛡️</div>
-                <div>
-                  <div style="font-weight:600;font-size:0.85rem;">Garansi Resmi</div>
-                  <div style="font-size:0.75rem;color:var(--text-muted);">100% Produk Original</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      ${p.specifications ? `
-      <div class="specs-section animate-fade-in-up" style="animation-delay:200ms;">
-        <h3 class="specs-title">📋 Spesifikasi Produk</h3>
-        <table class="specs-table">
-          ${Object.entries(p.specifications).map(([key, val]) => `
-            <tr>
-              <td>${key}</td>
-              <td>${val}</td>
-            </tr>
-          `).join('')}
-        </table>
-      </div>
-      ` : ''}
-
-      <div class="related-section">
-        <h2 class="section-title" style="margin-bottom:1.5rem;">Produk Terkait</h2>
-        <div class="row" id="relatedProductsGrid"></div>
-      </div>
-    `;
-
-    this.renderRelatedProducts();
-  },
+	          ${p.link ? `
+	          <a href="${p.link}" target="_blank" class="btn-tokopedia">
+	            💚 Beli di Tokopedia
+	          </a>
+	          ` : ''}
+	
+	          <div class="trust-badges">
+	            <div class="trust-badge">
+	              <div class="trust-badge-icon" style="background:rgba(16,185,129,0.15);color:var(--accent);">🚚</div>
+	              <div>
+	                <div class="trust-badge-text-title">Gratis Ongkir</div>
+	                <div class="trust-badge-text-desc">Min. belanja Rp 500.000</div>
+	              </div>
+	            </div>
+	            <div class="trust-badge">
+	              <div class="trust-badge-icon" style="background:rgba(99,102,241,0.15);color:var(--primary);">🛡️</div>
+	              <div>
+	                <div class="trust-badge-text-title">Garansi Resmi</div>
+	                <div class="trust-badge-text-desc">100% Produk Original</div>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	
+	      ${p.specifications ? `
+	      <div class="specs-section animate-fade-in-up" style="animation-delay:200ms;">
+	        <h3 class="specs-title">📋 Spesifikasi Produk</h3>
+	        <table class="specs-table">
+	          ${Object.entries(p.specifications).map(([key, val]) => `
+	            <tr>
+	              <td>${key}</td>
+	              <td>${val}</td>
+	            </tr>
+	          `).join('')}
+	        </table>
+	      </div>
+	      ` : ''}
+	
+	      <div class="related-section">
+	        <h2 class="section-title" style="margin-bottom:1.5rem;">Produk Terkait</h2>
+	        <div class="row" id="relatedProductsGrid"></div>
+	      </div>
+	    `;
+	
+	    this.renderRelatedProducts();
+	},
 
   switchImage(src, element) {
     const mainImg = document.getElementById('productMainImage');
@@ -195,7 +197,7 @@ const ProductDetail = {
 
   selectColor(color, element) {
     this.selectedColor = color;
-    document.querySelectorAll('.color-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.color-option-btn').forEach(b => b.classList.remove('active'));
     if (element) element.classList.add('active');
   },
 
@@ -255,7 +257,7 @@ const ProductDetail = {
         <div class="col-6 col-md-4 col-lg-3 mb-4 animate-fade-in-up" style="animation-delay:${idx * 100}ms;">
           <div class="product-card h-100">
             <div class="product-image-wrapper">
-              <img src="${image}" alt="${p.name}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400'" style="object-fit:cover;">
+              <img src="${image}" alt="${p.name}" loading="lazy" onerror="this.src='https://i.ibb.co.com/FqYtjpLF/Proyek-Baru-B352-F56.png'" style="object-fit:cover;">
             </div>
             <div class="product-body">
               <span class="product-category">${p.category}</span>

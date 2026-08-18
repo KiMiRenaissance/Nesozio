@@ -109,8 +109,9 @@ const SearchPage = {
     }
 
     const getBadge = (p) => {
-      if (p.id <= 3) return { type: 'hot', text: '🔥 HOT' };
-      if (p.id > 35) return { type: 'new', text: '✨ NEW' };
+      if (p.badge === 'new') return { type: 'new', text: '✨ NEW' };
+	  if (p.badge === 'hot') return { type: 'hot', text: '🔥 HOT' };
+	  if (p.badge === 'sale') return { type: 'sale', text: '💰 SALE' };;
       return null;
     };
 
@@ -155,6 +156,9 @@ const SearchPage = {
               </div>
               <button class="btn-detail" onclick="window.location.href='../product/index.html?id=${p.id}'">
                 Lihat Detail
+				<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+		            <path d="M5 12h14M12 5l7 7-7 7"></path>
+		        </svg>
               </button>
             </div>
           </div>

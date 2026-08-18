@@ -10,15 +10,15 @@ function shuffleArray(arr) {
 }
 
 function getBadge(product) {
-    if (product.id <= 3) return { type: 'hot', text: '🔥 HOT' };
-    if (product.id > 35) return { type: 'new', text: '✨ NEW' };
-    if (product.price < 50) return { type: 'sale', text: '💰 SALE' };
+    if (product.badge === 'new') return { type: 'new', text: '✨ NEW' };
+    if (product.badge === 'hot') return { type: 'hot', text: '🔥 HOT' };
+    if (product.badge === 'sale') return { type: 'sale', text: '💰 SALE' };
     return null;
 }
 
 function getProductImage(product) {
     const img = Array.isArray(product.images) ? product.images[0] : product.images;
-    return img || 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop&q=80';
+    return img || 'https://i.ibb.co.com/FqYtjpLF/Proyek-Baru-B352-F56.png';
 }
 
 function createProductCard(product, index = 0) {
@@ -37,7 +37,7 @@ function createProductCard(product, index = 0) {
 		                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
 		                </svg>
 		            </button>
-		            <img src="${image}" alt="${product.name}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop&q=80'">
+		            <img src="${image}" alt="${product.name}" loading="lazy" onerror="this.src='https://i.ibb.co.com/FqYtjpLF/Proyek-Baru-B352-F56.png'">
 		        </div>
 		        <div class="product-body">
 		            <span class="product-category">${product.category}</span>
