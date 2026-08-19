@@ -108,8 +108,6 @@ const CheckoutPage = {
                   <option>Jawa Timur</option>
                   <option>Banten</option>
                   <option>DI Yogyakarta</option>
-                  <option>Sumatera Utara</option>
-                  <option>Sulawesi Selatan</option>
                 </select>
               </div>
               <div class="col-md-6 mb-3">
