@@ -108,8 +108,6 @@ const CheckoutPage = {
                   <option>Jawa Timur</option>
                   <option>Banten</option>
                   <option>DI Yogyakarta</option>
-                  <option>Sumatera Utara</option>
-                  <option>Sulawesi Selatan</option>
                 </select>
               </div>
               <div class="col-md-6 mb-3">
@@ -185,7 +183,7 @@ const CheckoutPage = {
               const image = Array.isArray(item.product.images) ? item.product.images[0] : item.product.images;
               return `
                 <div style="display:flex;gap:0.75rem;margin-bottom:0.75rem;">
-                  <img src="${image}" alt="${item.product.name}" style="width:50px;height:50px;border-radius:8px;object-fit:cover;flex-shrink:0;" onerror="this.src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=200'">
+                  <img src="${image}" alt="${item.product.name}" style="width:50px;height:50px;border-radius:8px;object-fit:cover;flex-shrink:0;" onerror="this.src='https://i.ibb.co.com/FqYtjpLF/Proyek-Baru-B352-F56.png'">
                   <div style="flex:1;min-width:0;">
                     <div style="font-size:0.85rem;font-weight:500;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
                       ${item.product.name}

@@ -104,7 +104,7 @@ renderEmpty() {
 },
 
 renderItem(item, idx) {
-    const fallbackImage = 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400';
+    const fallbackImage = 'https://i.ibb.co.com/FqYtjpLF/Proyek-Baru-B352-F56.png';
     const image = Array.isArray(item.product.images)
         ? item.product.images[0]
         : item.product.images;
